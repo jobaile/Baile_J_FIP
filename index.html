@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>What Are You Waiting For?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!--Foundation CSS-->
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    
     <!--Other CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
+    
+    <!-- Vue JS -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
+
     <!-- VUE starts -->
     <main id="app">
         <!--Hero starts -->
@@ -23,9 +30,9 @@
                         <p>TITLE HERE</p>
                     </a>
                     <ul>
-                        <li>ABOUT</li>
-                        <li>ANOTHER</li>
-                        <li>SECTION</li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">ANOTHER</a></li>
+                        <li><a href="#">SECTION</a></li>
                     </ul>
                 </nav> 
                 <!-- Nav ends -->
@@ -33,17 +40,21 @@
          </section> 
          <!-- Hero ends -->
 
+        <!-- Section One starts-->
          <section class="informationOne">
              <div>
                 <h1>Information One</h1>
              </div>
          </section>
+         <!-- Section One Ends-->
 
+         <!-- Section Two Starts-->
          <section class="informationTwo">
             <div>
                 <h1>Information Two</h1>
             </div>     
          </section>
+         <!-- Section Two Ends-->
 
          <!-- Organ Section Starts -->
          <section class="organSection">
@@ -66,17 +77,18 @@
                  <h1>Footer Information</h1>
              </div>
          </footer>
-         <!-- Footer Ends -->
+        <!-- Footer Ends -->
+
     </main>
     <!-- VUE Ends -->
 
-    <!--JAVASCRIPT FILES START HERE-->
-    <!--Foundation JS-->
+    <!-- JAVASCRIPT FILES START HERE -->
+    <!-- Foundation JS -->
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-    <!--Other JS-->
+    <!-- Other JS -->
     <script type="module" src="js/main.js"></script>
 
 </body>
