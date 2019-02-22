@@ -2,5 +2,9 @@
 // sass --watch sass/main.scss:css/main.css --style compressed
 
 //IMPORT MODULES
-@import 'modules/_global';
+@import '_vars';
 @import 'modules/_mixins';
+
+//Sections
+@import 'modules/_hero';
+@import 'modules/_content';

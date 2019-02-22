@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jobaile/Baile_J_FIP#readme",
   "dependencies": {
+    "gulp": "^4.0.0",
     "gulp-sass": "^4.0.2"
   }
 }
