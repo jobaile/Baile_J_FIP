@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>What Are You Waiting For?</title>
+    <title>WAWYF Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!--Foundation CSS-->
@@ -12,21 +12,23 @@
     
     <!--Other CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     
     <!-- Vue JS -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
-  <main id="app">
 
-	<div class="container">
-		<!-- first thing in component templates should be a row -->
-		<router-view @authenticated="setAuthenticated"/>
-	</div>
+    <!-- VUE starts -->
+    <main id="app">
 
-	</main>
+        <div class="container">
+            <!-- first thing in component templates should be a row -->
+            <router-view @authenticated="setAuthenticated"/>
+        </div>
+    
+    </main>
+    <!-- VUE Ends -->
 
     <!-- JAVASCRIPT FILES START HERE -->
     <!-- Foundation JS -->

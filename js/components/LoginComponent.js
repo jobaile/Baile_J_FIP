@@ -37,7 +37,9 @@ export default {
      },
  
      methods: {
-         login() { 
+         login() {
+            //console.log(this.$parent.mockAccount.username);
+ 
             if(this.input.username != "" && this.input.password != "") {
             // fetch the user from the DB
             // generate the form data

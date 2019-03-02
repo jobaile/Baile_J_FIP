@@ -18,7 +18,7 @@
 		}else{
 			$result = createUser($fname,$username,$password,$email);
 			$message = $result;
-			$sendEmail = send_email($username, $password, $email);
+			//$sendEmail = send_email($username, $password, $email);
 		}
     }
 ?>
