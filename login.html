@@ -19,16 +19,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js"></script>
 </head>
 <body>
+  <main id="app">
 
-    <!-- VUE starts -->
-    <main id="app">
+	<div class="container">
+		<!-- first thing in component templates should be a row -->
+		<router-view @authenticated="setAuthenticated"/>
+	</div>
 
-        <!--! Vue Router Element -->
-        <transition name="fade" mode="out-in">
-            <router-view />
-        </transition>
-
-    </main>
+	</main>
 
     <!-- JAVASCRIPT FILES START HERE -->
     <!-- Foundation JS -->
