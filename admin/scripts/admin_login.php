@@ -1,5 +1,6 @@
 <?php 
-	require_once('scripts/config.php');
+	require_once('config.php');
+
 	if (isset($_GET['sessioncheck'])) {
 		$message = confirm_logged_in();
 	} else if (empty($_POST['username']) || empty($_POST['password'])){
