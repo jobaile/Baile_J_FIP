@@ -12,17 +12,21 @@
     
     <!--Other CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     
     <!-- Vue JS -->
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js"></script>
 </head>
 <body>
 
     <!-- VUE starts -->
     <main id="app">
-    
-        <h4 class="welcome-message"> {{ mainmessage }}</h4>
+
+        <!--! Vue Router Element -->
+        <transition name="fade" mode="out-in">
+            <router-view />
+        </transition>
 
     </main>
 

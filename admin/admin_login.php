@@ -1,64 +1,15 @@
 <?php 
 	require_once('scripts/config.php');
-	if(empty($_POST['username']) || empty($_POST['password'])){
-		$message = 'Login Failed';
-	}else{
+	if (isset($_GET['sessioncheck'])) {
+		$message = confirm_logged_in();
+	} else if (empty($_POST['username']) || empty($_POST['password'])){
+		$message = 'No Username or Password';
+	} else {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		//$ip = $_SERVER['REMOTE_ADDR']; //for the admin we're going to need to get the IP address
-										//we pass this to the login function
-		$message = login($username,$password, $ip); //don't forget to pass the paramaters
-	}
-
-    //Failed login attempts
-    if(!empty($password)){ //if the password is not correct or empty, it will count as a failed login
-        if (isset($_SESSION['loginAttempts'])){
-           $_SESSION['loginAttempts']++; //this adds the number of logins
-           if ($_SESSION['loginAttempts'] > 2){
-             echo 'You have exceeded the amount of login attempts! Please try again later.';
-             ?> 
-             <!--Uses the CSS property to hide the login form-->        
-             <style>
-                #login{display:none;}
-             </style>
-            <!--Uses the CSS property to hide the login form-->        
-                <?php 
-           } 
-        } else {
-            $_SESSION['loginAttempts'] = 1; //Shows a message on the first attempt
-            echo 'Please make sure to fill in the correct information!';
-        }  
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$message = login($username, $password, $ip);
     }
     
 	echo json_encode($message);
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-</head>
-<body>
-    
-<?php if(!empty($message)):?>
-	<p><?php echo $message;?></p>
-<?php endif;?>
-
-    <form id="login" action="admin_login.php" method="post"> <!-- use post to keep username and pw private-->
-         <label for="username">Username:
-        <input type="text" name="username" value="" required>
-        </label>
-        <br>
-        <label for="password">Password:
-        <input type="password" name="password" value="" required>
-        </label>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-    
-</body>
-</html>

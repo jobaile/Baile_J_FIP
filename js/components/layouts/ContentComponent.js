@@ -9,7 +9,7 @@ export default {
   
     data() {
       return {
-      mainmessage: `This is the dashboard component!`,
+      mainmessage: `This is the Content Component!`,
       }
     },
   
