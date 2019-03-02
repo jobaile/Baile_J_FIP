@@ -1,10 +1,10 @@
+
 import DashboardComponent from './components/DashboardComponent.js';
 import LoginComponent from './components/LoginComponent.js';
 import AddUserComponent from './components/AddUserComponent.js';
 import EditUserComponent from './components/EditUserComponent.js';
 import AddTestimonialComponent from './components/AddTestimonialComponent.js';
 import EditTestimonialComponent from './components/EditTestimonialComponent.js';
-
 
 
 let router = new VueRouter({
@@ -49,7 +49,7 @@ const vm = new Vue({
       let user = JSON.parse(localStorage.getItem("cachedUser"));
       this.authenticated = true;
       // params not setting properly, so this route needs to be debugged a bit...
-      this.$router.push({ name: "dashboard", params: { currentuser: user }});
+      this.$router.push({ name: "home", params: { currentuser: user }});
     } else {
       this.$router.push({ path: "/login"} );
     }    

@@ -1,5 +1,5 @@
 <?php 
-    require_once('scripts/config.php');
+    require_once('admin/scripts/config.php');
     confirm_logged_in();
     setcookie($cookie_query, time()); //I read that this needs to be before html
     date_default_timezone_set("America/Toronto"); //This sets the timezone to EST (America/Toronto)

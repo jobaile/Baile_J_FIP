@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 include 'connect.php';
+confirm_logged_in();
 
 if(isset($_REQUEST['btn_add']))
 {
