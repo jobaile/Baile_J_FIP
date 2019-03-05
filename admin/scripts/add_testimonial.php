@@ -10,49 +10,65 @@ if(isset($_REQUEST['btn_add']))
 		$name	= $_REQUEST['testimonial_name'];	
 			
 		$image_file	= $_FILES["testimonial_file"]["name"];
-		$type		= $_FILES["testimonial_file"]["type"];
-		$size		= $_FILES["testimonial_file"]["size"];
-		$temp		= $_FILES["testimonial_file"]["tmp_name"];
+		$typeimg	= $_FILES["testimonial_file"]["type"];
+		$sizeimg	= $_FILES["testimonial_file"]["size"];
+		$tempimg	= $_FILES["testimonial_file"]["tmp_name"];
 		
-		$path="../../images/".$image_file; //where the image will be uploaded
+		$video_file	= $_FILES["testimonial_video"]["name"];
+		$typevid	= $_FILES["testimonial_video"]["type"];
+		$sizevid	= $_FILES["testimonial_video"]["size"];
+		$tempvid	= $_FILES["testimonial_video"]["tmp_name"];
 		
+		$imagepath= "../../images/testimonials/".$image_file; //where the image will be uploaded
+		$videopath= "../../videos/testimonials/".$video_file; //where the image will be uploaded
+
 		if(empty($name)){
-			$error="Please Enter A Name";
-		}
-		else if(empty($image_file)){
-			$error="Please Select An Image";
-		}
-		else if($type=="image/jpg" || $type=='image/jpeg' || $type=='image/png' || $type=='image/gif') //allowed file extensions
+			$error="Please Enter A Name"; //Name for the Testimonial
+		} else if(empty($image_file)){
+			$error="Please Select An Image"; //Image for the Testimonial
+		} else if($typeimg == "image/jpg" || $typeimg == 'image/jpeg' || $typeimg == 'image/png' || $typeimg == 'image/gif') //allowed file extensions
 		{	
-			if(!file_exists($path)) //ensures that the file does not exist
+			if(!file_exists($imagepath)) //ensures that the file does not exist
 			{
-				if($size < 6000000) //check file size 6MB
-				{
-					move_uploaded_file($temp, "../../images/" .$image_file); //move upload file temperory directory to your upload folder
-				}
-				else
-				{
+				if($sizeimg < 6000000) { //6mb file size
+					move_uploaded_file($tempimg, "../../images/testimonials/" .$image_file); //move upload file temperory directory to your upload folder
+				} else {
 					$error="6MB Upload Limit"; //error message file size not large than 5MB
 				}
+			} else {	
+				$error="Image Already Exists"; //error message file not exists your upload folder path
 			}
-			else
-			{	
-				$error="File Already Exists"; //error message file not exists your upload folder path
+		} else {
+			$error="Please check file extension"; 
+		} 
+
+		if(empty($video_file)){
+			$error="Please Select A Video"; //Image for the Testimonial
+		} else if($typevid == "video/mp4" || $typevid == 'video/mpeg' || $typevid == 'video/ogg' || $typevid == 'video/webm') //allowed file extensions
+		{	
+			if(!file_exists($videopath)) //ensures that the file does not exist
+			{
+				if($sizevid < 80000000) { //80mb file size
+					move_uploaded_file($tempvid, "../../videos/testimonials/" .$video_file); 
+				} else {
+					$error="80MB Upload Limit"; 
+				}
+			} else {	
+				$error="Video Already Exists"; 
 			}
-		}
-		else
-		{
-			$error="Please check file extension"; //error message file extension
-		}
-		
+		} else {
+			$error="Please check file extension"; 
+		} 
+
 		if(!isset($error))
 		{
-			$insert_stmt='INSERT INTO tbl_file(name,image) VALUES(:fname,:fimage)'; //sql insert query					
-			$insert_stmt_set = $pdo->prepare($insert_stmt);
-			$insert_stmt_set->execute(
+			$insert_testimonial='INSERT INTO tbl_file(name, image, video) VALUES(:tname,:timage, :tvideo)'; //sql insert query					
+			$insert_testimonial_set = $pdo->prepare($insert_testimonial);
+			$insert_testimonial_set->execute(
 				array(
-					':fname'=>$name,
-					':fimage'=>$image_file
+					':tname'=>$name,
+					':timage'=>$image_file,
+					':tvideo'=>$video_file,
 				)
 			);
             

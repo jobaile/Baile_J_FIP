@@ -12,11 +12,17 @@ export default {
         </div>
             
         <div>
-        <input type="file" name="testimonial_file">
+        <label>Upload Image:</label>
+            <input type="file" name="testimonial_file">
         </div>
 
         <div>
-        <input type="submit"  name="btn_add" class="btn" value="Insert">
+        <label>Upload Video:</label>
+            <input type="file" name="testimonial_video">
+        </div>
+
+        <div>
+        <input type="submit" name="btn_add" class="btn" value="Submit">
         <a href="index.php" class="btn">Cancel</a>
         </div>
             
