@@ -1,61 +1,62 @@
-<?php 
-    require_once('admin/scripts/config.php');
-    confirm_logged_in();
-    setcookie($cookie_query, time()); //I read that this needs to be before html
-    date_default_timezone_set("America/Toronto"); //This sets the timezone to EST (America/Toronto)
+<?php
+	require_once "scripts/connect.php";
+    //require_once('scripts/config.php');
+    
+    if(isset($_REQUEST['delete_id']))
+	{
+		// select image from db to delete
+		$id=$_REQUEST['delete_id'];	//get delete_id and store in $id variable
+		
+		$select_stmt= $pdo->prepare('SELECT * FROM tbl_file WHERE id =:id');	//sql select query
+		$select_stmt->bindParam(':id',$id);
+		$select_stmt->execute();
+		$row=$select_stmt->fetch(PDO::FETCH_ASSOC);
+		unlink("../../images/".$row['image']); //unlink function permanently remove your file
+		
+		//delete an orignal record from db
+		$delete_stmt = $pdo->prepare('DELETE FROM tbl_file WHERE id =:id');
+		$delete_stmt->bindParam(':id',$id);
+		$delete_stmt->execute();
+		
+		header("Location:index.php");
+	}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Page</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+<title>Testimonials</title>
+		
 </head>
-<body>
 
-<h1>User Dashboard</h1>
-    <h2>Hello, <?php echo $_SESSION['user_name'];?></h2> 
-
-    <?php 
-    //Start of different messages depending on time of day
-        $time = date("H"); //This will set the variable to a 24 hour clock
-        if ($time < "12") { //Before 1200 is the morning
-            echo "<h2>Good morning!</h2>";
-        } elseif ($time >= "12" && $time < "18") { //Between 1200 and 1800 is the afternoon
-            echo "<h2>Good afternoon!</h2>";
-        } elseif ($time >= "18") { //After 1800 it is night time
-            echo "Oh, you're up so late! Good night";
-        }
-    //End of different messages
-    //Start of login time
-        $loginTime = ($_COOKIE['user_date']); //sets the cookie for when user is last logged in
-        $timeQuery = 'SELECT * FROM tbl_users WHERE user_date = '.$loginTime;
-
-        if(!isset($_COOKIE[$timeQuery])) {
-            echo 'You last visited on: '.date('D, M. d, Y \a\t g:ia'); //Formats as Day, Month, day (number), year at hour:minute
-        } else {
-            //Ideally this would what would show up if they haven't visited the site before?
-            // Don't how this would work, will have to do further research
-            echo 'Welcome to my site!';
-        }
-    //End of login time
-    ?>
-
-    <nav>
+	<body>
+	
+	<div class="container">
         <ul>
-            <li><a href="scripts/caller.php?caller_id=logout">Sign Out</a></li>
+            <a href="testimonial_add.php">Add A File</a>
         </ul>
-    </nav>
 
-    <div>
-		<ul>
-			<li><a href="testimonial_add.php">Add Post</a></li>
-			<li><a href="testimonial_all.php">View Posts</a></li>
-		</ul>
-	</div>
+        <?php
+            $select_stmt=$pdo->prepare("SELECT * FROM tbl_file");	//sql select query
+            $select_stmt->execute();
+            while($row=$select_stmt->fetch(PDO::FETCH_ASSOC))
+            {
+		?>
 
-</body>
+        <p><?php echo $row['name']; ?></p>
+        <img src="../images/<?php echo $row['image']; ?>" width="100px" height="60px">
+        <a href="testimonial_edit.php?update_id=<?php echo $row['id']; ?>" class="btn">Edit</a>
+        <a href="?delete=<?php echo $row['id']; ?>" class="btn">Delete</a>
+
+        <?php
+        }
+        ?>
+    </div>
+		
+
+									
+	</body>
 </html>
