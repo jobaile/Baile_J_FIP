@@ -1,6 +1,7 @@
 # What Are You Waiting For?
 #### The Campaign:
 Organ Donation information will go here
+
 ## Installation
 **Install [npm](https://www.npmjs.com/get-npm) if not already done so**
 
@@ -19,6 +20,12 @@ Organ Donation information will go here
 5. Insert db_fip (provided inside database folder) onto your PHPMyAdmin
 
 6. Run page through your localhost.
+
+# Features
+A working CMS system! You can upload your own testimonials.
+* Supported Images -  jpg, jpeg, png, gif
+* Supported Videos - mp4, webm, ogg, mpeg
+This will update real time on the website!
 
 # Members
 Since we are a team of 4, we have divided up the Project Manager role.
