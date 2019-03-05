@@ -1,14 +1,12 @@
 <?php
-require_once('scripts/config.php');
-confirm_logged_in();
+require_once('config.php');
 
 if(isset($_REQUEST['update_id']))
 {
 	try
 	{
 		$id = $_REQUEST['update_id']; //get "update_id" from index.php page through anchor tag operation and store in "$id" variable
-		$select_query = $db->prepare('SELECT * FROM tbl_file WHERE id =:id'); //sql select query
-		$select_query->bindParam(':id',$id);
+		$select_query = $pdo->prepare('SELECT * FROM tbl_file WHERE id =:id');
 		$select_query->execute(); 
 		$row = $select_query->fetch(PDO::FETCH_ASSOC);
 		extract($row);
@@ -68,7 +66,7 @@ if(isset($_REQUEST['btn_update']))
 	
 		if(!isset($errorMsg))
 		{
-			$update_stmt=$db->prepare('UPDATE tbl_file SET name=:name_up, image=:file_up WHERE id=:id'); //sql update query
+			$update_stmt=$pdo->prepare('UPDATE tbl_file SET name=:name_up, image=:file_up WHERE id=:id'); //sql update query
 			$update_stmt->bindParam(':name_up',$name);
 			$update_stmt->bindParam(':file_up',$image_file);	//bind all parameter
 			$update_stmt->bindParam(':id',$id);

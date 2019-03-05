@@ -1,17 +1,14 @@
 import UserComponent from './UserComponent.js';
+import NavDBComponent from "./dashboard/NavDBComponent.js";
 
 export default {
 	template: `
-	<div class="container">
-		<ul>
-		<li><router-link :to="{path: '/adduser'}" class="link">Add A User</router-link></li>
-		<li><router-link :to="{path: '/edituser'}" class="link">Edit Users</router-link></li>
-		</ul>
-		<ul>
-			<li><router-link :to="{path: '/addtestimonial'}" class="link">Add A Testimonial</router-link></li>
-			<li><router-link :to="{path: '/edittestimonial'}" class="link">Edit Testimonials</router-link></li>
-		</ul>
-	</div>
+	<section>
+		<NavDBComponent />
+
+		<h1>Welcome, [username]!</h1>
+		<p class="text-center">If you have any questions, please contact the server administrator.</p>
+	</section>
 	`,
 
 	created: function() {
@@ -41,6 +38,7 @@ export default {
 	},
 
 	components: {
-		user: UserComponent
+		user: UserComponent,
+		NavDBComponent: NavDBComponent
 	}
 }

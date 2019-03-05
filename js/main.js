@@ -1,10 +1,10 @@
 
 import DashboardComponent from './components/DashboardComponent.js';
 import LoginComponent from './components/LoginComponent.js';
-import AddUserComponent from './components/AddUserComponent.js';
-import EditUserComponent from './components/EditUserComponent.js';
-import AddTestimonialComponent from './components/AddTestimonialComponent.js';
-import EditTestimonialComponent from './components/EditTestimonialComponent.js';
+import AddUserComponent from './components/dashboard/AddUserComponent.js';
+import EditUserComponent from './components/dashboard/EditUserComponent.js';
+import AddTestimonialComponent from './components/dashboard/AddTestimonialComponent.js';
+import EditTestimonialComponent from './components/dashboard/EditTestimonialComponent.js';
 
 
 let router = new VueRouter({

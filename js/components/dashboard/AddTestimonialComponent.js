@@ -1,6 +1,9 @@
+import NavDBComponent from "./NavDBComponent.js";
+
 export default {
     template: `
     <section>
+    <NavDBComponent />
     <form action="./admin/scripts/add_testimonial.php" method="post" enctype="multipart/form-data">
 					
         <div>
@@ -20,4 +23,8 @@ export default {
     </form>
     </section>
     `,
+
+    components: {
+		NavDBComponent: NavDBComponent
+	}
 }
