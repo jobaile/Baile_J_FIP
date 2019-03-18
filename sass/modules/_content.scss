@@ -9,3 +9,47 @@
 .organSection {
     background-color: $red;
 }
+
+/* Hero Video Section */
+video {
+    width: 100%
+}
+
+/* Waiting Statistic Sections */
+.stat-text {
+    font-family: $main-font;
+    color: $white;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 100px 0px 100px 0px;
+}
+
+/* About Section */
+#section-about {
+    background-image: url("../images/bckgnd-about.png"); /* The image used */
+    background-color: $red; /* Used if the image is unavailable */
+    height: 100%; /* Set a specified height */
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+/* 'How can I help?' Section */
+#help-section {
+    background-image: url("../images/bckgnd-help.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.numbers {
+    font-family: $main-font;
+    color: $white;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+#waywf-pre-footer-img {
+    width: 100%;
+}
