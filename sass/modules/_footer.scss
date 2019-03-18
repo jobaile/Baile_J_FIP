@@ -1,0 +1,82 @@
+/* -------------------------------------------------- FOOTER -------------------------------------------------- */
+footer
+{
+	background-color: #000000;
+    margin-top: 25px;
+}
+
+.footer-logo {
+    width: 50px;
+    margin: 20px 0px 20px 0px;
+} 
+
+/* Social Icon Classes */
+.footer-social-icons {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    fill: #ffffff;
+}
+.footer-social-icons:hover {
+    fill: #893737;
+    transition-duration: 1s;
+}
+.footer-social-icons:not(:hover) {
+    transition-duration: 1s;
+}
+
+.tiny-footer-text {
+    color: #ffffff;
+	font-family: $main-font;
+	font-size: 12px;
+	line-height: 14px;
+    font-weight: 100;
+    padding: 10px 0px 25px 0px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-links {
+    text-decoration: none;
+    display: inline;
+    font-size: 20px;
+    font-family: $main-font;
+    color: $white;
+}
+
+/* Nav Link Color */
+.footer-links-container ul li a {
+    color: $white;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* Hovering over a nav link */
+.footer-links ul li a:hover {
+    background-color: $white;
+    color: $red;
+    transition-duration: 1s;
+}
+
+/* Hovering off of a nav link */
+.footer-links ul li a:not(hover) {
+    transition-duration: 1s;
+}
+
+.register-btn {
+    color: $white;
+    background-color: $red;
+    padding: 7px;
+    font-family: $main-font;
+    font-size: 20px;
+}
+
+.register-btn:hover {
+    background-color: $white;
+    color: $red;
+    transition-duration: 1s;
+}
+
+.register-btn:not(hover) {
+    transition-duration: 1s;
+}
