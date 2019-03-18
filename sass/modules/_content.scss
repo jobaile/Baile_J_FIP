@@ -26,7 +26,7 @@ video {
 
 /* About Section */
 #section-about {
-    background-image: url("../../images/bckgnd-about.png"); /* The image used */
+    background-image: url("../images/bckgnd-about.png"); /* The image used */
     background-color: $red; /* Used if the image is unavailable */
     height: 100%; /* Set a specified height */
     width: 100%;
@@ -37,7 +37,7 @@ video {
 
 /* 'How can I help?' Section */
 #help-section {
-    background-image: url("../../images/bckgnd-help.jpg");
+    background-image: url("../images/bckgnd-help.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
