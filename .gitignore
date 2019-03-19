@@ -4,5 +4,8 @@ node_modules
 .sass-cache
 
 #Files
+.DS_Store
 
 #Extensions
+.xd
+.pdf
