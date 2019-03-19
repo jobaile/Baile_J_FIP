@@ -10,12 +10,33 @@
     background-color: $red;
 }
 
-/* Hero Video Section */
+/* ----------------------------------- Hero Video Section ----------------------------------- */
 video {
     width: 100%
 }
 
-/* Waiting Statistic Sections */
+/* ----------------------------------- Waiting Statistic Sections ----------------------------------- */
+.stat-1-container {
+    position: relative;
+}
+
+.stat-1-text {
+    font-family: $main-font;
+    color: $red;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 80px 20px 100px 20px;
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    width: 80%
+}
+
+@media screen and (min-width: 640px) {
+    font-size: 50px;
+    line-height: 55px;
+}
+
 .stat-text {
     font-family: $main-font;
     color: $white;
@@ -24,32 +45,79 @@ video {
     margin: 100px 0px 100px 0px;
 }
 
-/* About Section */
-#section-about {
-    background-image: url("../images/bckgnd-about.png"); /* The image used */
+
+/* ----------------------------------- About Section ----------------------------------- */
+#about-section-bckgnd {
+    position: relative;
+}
+
+.about-text {
+    margin: 35px 0px 500px 0px;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    width: 80%;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+@media screen and (min-width: 500px) {.about-text {width: 80%; margin-left: 5%; font-size: 25px; line-height: 30px;}}
+@media screen and (min-width: 550px) {.about-text {width: 80%; margin-left: 5%; font-size: 33px; line-height: 40px;}}
+@media screen and (min-width: 640px) {.about-text {width: 40%; margin-left: 0; font-size: 18px; line-height: 21px;}}
+@media screen and (min-width: 775px) {.about-text {width: 40%; margin-left: 0; font-size: 22px; line-height: 27px;}}
+@media screen and (min-width: 850px) {.about-text {width: 44%; margin-left: 0; font-size: 26px; line-height: 31px;}}
+@media screen and (min-width: 1000px) {.about-text {width: 44%; margin-left: 0; font-size: 30px; line-height: 36px;}}
+@media screen and (min-width: 1100px) {.about-text {width: 44%; margin-left: 0; font-size: 33px; line-height: 39px;}}
+@media screen and (min-width: 1200px) {.about-text {width: 43%; margin-left: 10px; font-size: 35px; line-height: 43px;}}
+
+/* ----------------------------------- Testimonial Section ----------------------------------- */
+#testimonial-section {
+    background-image: url("/images/bckgnd-testimonials.jpeg"); /* The image used */
     background-color: $red; /* Used if the image is unavailable */
-    height: 100%; /* Set a specified height */
-    width: 100%;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-/* 'How can I help?' Section */
+/* ----------------------------------- 'How can I help?' Section ----------------------------------- */
 #help-section {
     background-image: url("../images/bckgnd-help.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+    height: 100%;
+    width: 100%;
+}
+
+.help-section-content {
+    margin: 70px 0px 70px 20px;
+}
+
+@media screen and (min-width: 650px) {
+    .help-section-content {
+        margin: 120px 0px 120px 100px;
+    }
 }
 
 .numbers {
     font-family: $main-font;
-    color: $white;
-    font-size: 50px;
-    line-height: 55px;
+    color: $red;
+    font-size: 60px;
+    line-height: 65px;
 }
 
-#waywf-pre-footer-img {
-    width: 100%;
+.help-text {
+    color: $white;
+    font-family: $main-font;
+    font-size: 27px;
+    font-style: normal;
+}
+
+.help-text-saved {
+    color: $white;
+    font-family: $main-font;
+    font-size: 27px;
+    font-style: normal;
+    margin-left: 63px;
+    margin-top: 40px
 }

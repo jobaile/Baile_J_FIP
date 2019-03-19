@@ -15,6 +15,10 @@ body {
 p {
     color: $white;
     font-family: $main-font;
-    font-size: 23px;
-    line-height: 30px;
+    font-size: 25px;
+    line-height: 32px;
+}
+
+.bold {
+    font-weight: 550;
 }
