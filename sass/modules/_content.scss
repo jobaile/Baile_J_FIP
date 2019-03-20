@@ -16,34 +16,32 @@ video {
 }
 
 /* ----------------------------------- Waiting Statistic Sections ----------------------------------- */
-.stat-1-container {
+.stat-container {
     position: relative;
-}
-
-.stat-1-text {
-    font-family: $main-font;
-    color: $red;
-    font-size: 20px;
-    line-height: 28px;
-    margin: 80px 20px 100px 20px;
-    position: absolute;
-    top: 0px;
-    left: 30px;
-    width: 80%
-}
-
-@media screen and (min-width: 640px) {
-    font-size: 50px;
-    line-height: 55px;
+    margin: 20px 0px 20px 0px;
 }
 
 .stat-text {
     font-family: $main-font;
-    color: $white;
-    font-size: 50px;
-    line-height: 55px;
-    margin: 100px 0px 100px 0px;
+    color: $black;
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
 }
+
+@media screen and (min-width: 640px) {
+    .stat-text {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+@media screen and (min-width: 640px) {.stat-text {font-size: 55px; line-height: 65px;}}
+
 
 
 /* ----------------------------------- About Section ----------------------------------- */
@@ -61,6 +59,7 @@ video {
     line-height: 27px;
 }
 
+/* Media Queries for the size/placement of the about text over the bckgnd img */
 @media screen and (min-width: 500px) {.about-text {width: 80%; margin-left: 5%; font-size: 25px; line-height: 30px;}}
 @media screen and (min-width: 550px) {.about-text {width: 80%; margin-left: 5%; font-size: 33px; line-height: 40px;}}
 @media screen and (min-width: 640px) {.about-text {width: 40%; margin-left: 0; font-size: 18px; line-height: 21px;}}
@@ -87,6 +86,7 @@ video {
     background-size: cover; /* Resize the background image to cover the entire container */
     height: 100%;
     width: 100%;
+    margin: 0px;
 }
 
 .help-section-content {
@@ -113,6 +113,7 @@ video {
     font-style: normal;
 }
 
+/* 'You just saved 8 lives.' */
 .help-text-saved {
     color: $white;
     font-family: $main-font;
@@ -120,4 +121,40 @@ video {
     font-style: normal;
     margin-left: 63px;
     margin-top: 40px
+}
+
+/* ----------------------------------- Learn More Sections ----------------------------------- */
+#learn-more-section {
+    background-image: url("../images/bckgnd-learn-more.jpeg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+.organ-icons {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
+.organ-name {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 30px;
+}
+
+.organ-info {
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 15px;
+}
+
+.organ-fact {
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 15px;
+    font-style: italic;
 }

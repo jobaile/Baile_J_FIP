@@ -4,6 +4,10 @@ body {
     font-family: $main-font;
 }
 
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: $main-font;
+}
+
 .hidden {
     display: none;
 }
@@ -17,6 +21,10 @@ p {
     font-family: $main-font;
     font-size: 25px;
     line-height: 32px;
+}
+
+h2 {
+    font-size: 70px;
 }
 
 .bold {
