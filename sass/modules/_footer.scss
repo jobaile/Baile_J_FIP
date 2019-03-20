@@ -1,8 +1,13 @@
+/* ----------------------------------- What are you waiting for? Pre footer image ----------------------------------- */
+#waywf-pre-footer-img {
+    
+    margin: 0 auto;
+}
+
 /* -------------------------------------------------- FOOTER -------------------------------------------------- */
 footer
 {
-	background-color: #000000;
-    margin-top: 25px;
+	background-color: $black;
 }
 
 .footer-logo {
@@ -15,10 +20,10 @@ footer
     width: 30px;
     height: 30px;
     margin: 5px;
-    fill: #ffffff;
+    fill: $white;
 }
 .footer-social-icons:hover {
-    fill: #893737;
+    fill: $red;
     transition-duration: 1s;
 }
 .footer-social-icons:not(:hover) {
@@ -26,7 +31,7 @@ footer
 }
 
 .tiny-footer-text {
-    color: #ffffff;
+    color: $white;
 	font-family: $main-font;
 	font-size: 12px;
 	line-height: 14px;
