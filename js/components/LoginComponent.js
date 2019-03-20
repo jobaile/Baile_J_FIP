@@ -1,3 +1,5 @@
+// import DashboardComponent from './components/DashboardComponent.js';
+
 export default {
     template: `
     <div class="form-wrapper">
@@ -28,10 +30,32 @@ export default {
                  password: ""
              },
 
+             authenticated: false,
+
          }
      },
+
+     created: function() {
+        // do a session check and set authenticated to true if the session still exists
+        // if the cached user exists, then just navigate to their user home page
+        // the localstorage session will persist until logout
+    
+        if (localStorage.getItem("cachedUser")) {
+          let user = JSON.parse(localStorage.getItem("cachedUser"));
+          this.authenticated = true;
+          // params not setting properly, so this route needs to be debugged a bit...
+          this.$router.push({ name: "dashboard", params: { currentuser: user }});
+        } else {
+          this.$router.push({ path: "/login"} );
+        }    
+      },
  
      methods: {
+        setAuthenticated(status, data) {
+            this.authenticated = status;
+            this.user = data;
+          },
+
          login() {
             //console.log(this.$parent.mockAccount.username);
  
@@ -65,6 +89,16 @@ export default {
         } else {
                  console.log("A username and password must be present");
             }
-        }
+        },
+
+        logout() {
+            // delete local session
+            if (localStorage.getItem("cachedUser")) {
+              localStorage.removeItem("cachedUser");
+            }
+            // push user back to login page
+            this.$router.push({ path: "/login" });
+            this.authenticated = false;
+          },
     }
  }

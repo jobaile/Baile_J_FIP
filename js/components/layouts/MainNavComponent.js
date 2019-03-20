@@ -1,11 +1,12 @@
 export default {
 	template: `
-	<section>
-	<!-- NAV @ SMALL ONLY -->
+    <div>
+
+    <!-- NAV @ SMALL ONLY -->
     <h1 class="hidden">Main Navigation</h1>
         <!-- the trigger -->
         <div class="curtain-menu-button show-for-small-only" data-curtain-menu-button>
-            <div class="curtain-menu-button-toggle" @click="openNav()">
+            <div class="curtain-menu-button-toggle" @click="openNav()"> 
                 <div class="bar1"></div>
                 <div class="bar2"></div>
             </div>
@@ -23,7 +24,7 @@ export default {
                     <li><a href="#">Act Now</a></li>
                     <li><a href="#">Next Steps</a></li>
                     <li><a href="#">Learn More</a></li>	
-                    <li><a href="#">Register</a></li>	
+                    <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
                     <!-- Social Media Links -->	
                     <li>
                         <a href="#" target="_blank">
@@ -45,35 +46,34 @@ export default {
         </div>
     <!-- END: NAV -->
 
-
-	<!-- LOGO & (medium up) NAV -->
+        <!-- LOGO & (medium up) NAV -->
 		<header class="grid-x grid-padding-x">
 			<div class="small-8 small-offset-0 medium-2 medium-offset-0 large-2 large-offset-0 cell">
-				<a href="index.html">
+				<a href="#/">
 					<img src="images/logo-main-white.svg" alt="What Are You Waiting For? Main Logo" class="main-logo">
 				</a>
             </div>
             <nav class="hide-for-small-only medium-10 medium-offset-0 large-10 large-offset-0 cell large-nav">
                 <!-- Nav Links -->
-				<ul class="float-right">
-					<li><router-link :to="{path: '/dashboard'}" class="nav-links-large">Dashboard</router-link></li>
-					<li><router-link :to="{path: '/adduser'}" class="nav-links-large">Add A User</router-link></li>
-					<li><router-link :to="{path: '/edituser'}" class="nav-links-large">Edit Users</router-link></li>
-					<li><router-link :to="{path: '/addtestimonial'}" class="nav-links-large">Add A Testimonial</router-link></li>
-					<li><router-link :to="{path: '/edittestimonial'}" class="nav-links-large">Edit Testimonials</router-link></li>
+                <ul class="float-right">
+                    <li class="nav-links-large"><a href="#">Home</a></li>
+                    <li class="nav-links-large"><a href="#">About</a></li>
+                    <li class="nav-links-large"><a href="#">Act Now</a></li>
+                    <li class="nav-links-large"><a href="#">Next Steps</a></li>
+                    <li class="nav-links-large"><a href="#">Learn More</a></li>	
+                    <li class="nav-links-large"><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
                 </ul>
             </nav>
-		</header>
-		
+        </header>
 
-	</section>
+    </div>
     `,
     
     methods: {
         openNav() {
             $('[data-curtain-menu-button]').click(function(){
-              $('body').toggleClass('curtain-menu-open');
+                $('body').toggleClass('curtain-menu-open');
             })
-          }
+            }
     }
 }

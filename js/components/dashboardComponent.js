@@ -5,7 +5,6 @@ export default {
 	template: `
 	<section>
 		<NavDBComponent />
-
 		<h1>Welcome, [username]!</h1>
 		<p class="text-center">If you have any questions, please contact the server administrator.</p>
 	</section>
