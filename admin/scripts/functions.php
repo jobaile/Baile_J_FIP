@@ -26,7 +26,7 @@ function createUser($fname,$username,$password,$email){
   );
 
   if($create_user_set->rowCount()){
-	redirect_to('../../login.html');
+	redirect_to('../../login.html#/dashboard');
 	//change this just so a message pops up > users don't need to sign in again
   }else{
     $message = 'Your hiring practices have failed you.. this individual sucks...';

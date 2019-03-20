@@ -5,11 +5,14 @@ import AddUserComponent from './components/dashboard/AddUserComponent.js';
 import EditUserComponent from './components/dashboard/EditUserComponent.js';
 import AddTestimonialComponent from './components/dashboard/AddTestimonialComponent.js';
 import EditTestimonialComponent from './components/dashboard/EditTestimonialComponent.js';
+//import index from './components/homeComponent.js';
 
 
 let router = new VueRouter({
 
   routes: [
+      // { path: '/', redirect: { name: "index"} },
+      // { path: '/home', redirect: { name: "index"}, component: index },
       { path: '/', redirect: { name: "login"} },
       { path: '/login', name: "login", component: LoginComponent },
       { path: '/dashboard', name: 'dashboard', component: DashboardComponent },

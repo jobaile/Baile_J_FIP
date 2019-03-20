@@ -9,18 +9,20 @@ if(isset($_REQUEST['btn_add']))
 	{
 		$name	= $_REQUEST['testimonial_name'];	
 			
+		//for the image/thumbnail
 		$image_file	= $_FILES["testimonial_file"]["name"];
 		$typeimg	= $_FILES["testimonial_file"]["type"];
 		$sizeimg	= $_FILES["testimonial_file"]["size"];
 		$tempimg	= $_FILES["testimonial_file"]["tmp_name"];
 		
+		//for the video
 		$video_file	= $_FILES["testimonial_video"]["name"];
 		$typevid	= $_FILES["testimonial_video"]["type"];
 		$sizevid	= $_FILES["testimonial_video"]["size"];
 		$tempvid	= $_FILES["testimonial_video"]["tmp_name"];
 		
 		$imagepath= "../../images/testimonials/".$image_file; //where the image will be uploaded
-		$videopath= "../../videos/testimonials/".$video_file; //where the image will be uploaded
+		$videopath= "../../videos/testimonials/".$video_file; //where the vide will be uploaded
 
 		if(empty($name)){
 			$error="Please Enter A Name"; //Name for the Testimonial

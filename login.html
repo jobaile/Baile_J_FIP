@@ -13,6 +13,9 @@
     <!--Other CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
     
+    <!-- CSS for Futura-Pt Font -->
+    <link rel="stylesheet" href="https://use.typekit.net/bln4yuu.css">
+    
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -23,8 +26,7 @@
     <main id="app">
 
         <div class="container">
-            <!-- first thing in component templates should be a row -->
-            <router-view @authenticated="setAuthenticated"/>
+             <router-view @authenticated="setAuthenticated"/>
         </div>
     
     </main>
@@ -38,7 +40,7 @@
     <script src="js/app.js"></script>
     <!-- Other JS -->
     <script type="module" src="js/main.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/nav.js"></script>
 
 </body>
 </html>

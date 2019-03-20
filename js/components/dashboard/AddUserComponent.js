@@ -4,6 +4,7 @@ export default {
     template: `
     <div>
     <NavDBComponent />
+
         <form action="./admin/scripts/admin_createuser.php" method="post">
         <label for="first-name">First Name:</label>
         <input type="text" id="first-name" name="fname" value=""><br><br>
@@ -19,8 +20,8 @@ export default {
         
         <button type="submit" name="submit">Create User</button>
         </form>
+
     </div>
-    <h1>Add User Component</h1>
     `,
     
     components: {
