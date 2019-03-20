@@ -89,7 +89,7 @@ header {
     font-weight: 100;
 }
 .curtain-menu-wrapper .curtain-menu-list li a:hover {
-    color: $red;
+    color: $black;
     transition-duration: 1s;
 }
 .curtain-menu-wrapper .curtain-menu-list li a:not(hover) {
@@ -106,7 +106,7 @@ header {
     float: left;
 }
 .nav-social-icons:hover {
-    fill: $red;
+    fill: $black;
     transition-duration: 1s;
 }
 .nav-social-icons:not(:hover) {
@@ -235,9 +235,15 @@ header {
 .nav-links-large {
     text-decoration: none;
     display: inline;
-    font-size: 20px;
+    font-size: 16px;
     font-family: $main-font;
     color: $white;
+}
+
+@media screen and (min-width: 707px) {
+    .nav-links-large {
+        font-size: 22px;
+    }
 }
 
 /* Nav Link Color */
@@ -258,3 +264,4 @@ header {
 .large-nav ul li a:not(hover) {
     transition-duration: 1s;
 }
+
