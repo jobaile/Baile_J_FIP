@@ -18,8 +18,8 @@
     
     <!-- Vue JS -->
     <!-- Leaving this out for now, I'm currently targetting vue for the login-->
-    <!-- <script src="https://unpkg.com/vue"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
 
@@ -45,7 +45,7 @@
                     <li><a href="#">Act Now</a></li>
                     <li><a href="#">Next Steps</a></li>
                     <li><a href="#">Learn More</a></li>	
-                    <li><a href="#">Register</a></li>	
+                    <li><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
                     <!-- Social Media Links -->	
                     <li>
                         <a href="#" target="_blank">
@@ -68,7 +68,7 @@
     <!-- END: NAV -->
     
     <!-- Everything goes inside this div (with the exception of mobile nav) -->
-	<div class="grid-container">
+	<div class="grid-container full">
 
         <!-- LOGO & (medium up) NAV -->
 		<header class="grid-x grid-padding-x">
@@ -85,23 +85,24 @@
                     <li class="nav-links-large"><a href="#">Act Now</a></li>
                     <li class="nav-links-large"><a href="#">Next Steps</a></li>
                     <li class="nav-links-large"><a href="#">Learn More</a></li>	
-                    <li class="nav-links-large"><a href="#">Register</a></li>	
+                    <li class="nav-links-large"><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
                 </ul>
             </nav>
         </header>
 
-        <!-- HERO VIDEO -->
-        <section class="hero grid-x grid-padding-x" id="hero-video"> 
-            <div class="small-12 small-offset-0 medium-12 medium-offset-0 large-12 large-offset-0 cell">
-                <video autoplay muted loop id="myVideo">
-                    <source src="video/hero-video.mp4" type="video/mp4">
-                </video>
-            </div>
-         </section> 
-         <!-- END HERO VIDEO -->
         
+        <!-- HERO VIDEO -->
+		<section class="grid-x">
+            <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
+                <video autoplay muted loop id="myVideo">
+                    <source src="video/hero-video.mp4" width="100%" type="video/mp4">
+                </video>                   
+            </div>
+        </section>
+        <!-- END HERO VIDEO -->
+
         <!-- WAITING STAT 1 -->
-		<section class="grid-x grid-padding-x">
+		<section class="grid-x">
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
@@ -113,7 +114,7 @@
 
 
         <!-- ABOUT SECTION-->
-         <section class="grid-x grid-padding-x" id="section-about">
+         <section class="grid-x" id="section-about">
             <div id="about-section-bckgnd" class="small-12 small-offset-0 medium-12 medium-offset-0 large-12 large-offset-0 cell">
                 <img data-interchange="[images/bckgnd-about-mobile.png, small], [images/bckgnd-about.png, medium], [images/bckgnd-about.png, large]" alt="Waiting at a bus stop">
                 <p class="about-text">The best things in life are worth waiting for, meeting the love of your life, finally getting to go on your dream vacation or even just standing in line for the perfect cup of coffee. But some waits are harder than others. So, while you’re waiting for your wait to come to an end, why not help change someone else’s story and sign up to be an organ donor.
@@ -125,7 +126,7 @@
          <!-- END ABOUT SECTION-->
 
         <!-- WAITING STAT 2 -->
-		<section class="grid-x grid-padding-x">
+		<section class="grid-x">
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
@@ -136,13 +137,13 @@
         <!-- END WAITING STAT 2 -->
 
         <!-- Section Two Starts-->
-         <section class="informationTwo grid-x grid-padding-x">
+         <section class="informationTwo grid-x">
             <div id="help-section" class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <div class="help-section-content">
                     <p class="numbers">How can I help?</p>
-                    <p class="help-text"><span class="numbers">1. </span>Grab your health card</p>
-                    <p class="help-text"><span class="numbers">2. </span>Go to www.beadonor.ca</p>
-                    <p class="help-text"><span class="numbers">3. </span>Register</p>
+                    <p class="help-text"><span class="numbers bold">1. </span>Grab your health card</p>
+                    <p class="help-text"><span class="numbers bold">2. </span>Go to www.beadonor.ca</p>
+                    <p class="help-text"><span class="numbers bold">3. </span>Register</p>
                     <p class="help-text-saved"><span class="bold">You just saved 8 lives.</span></p>
                 </div>
             </div>     
@@ -150,7 +151,7 @@
          <!-- Section Two Ends-->
 
         <!-- WAITING STAT 3 -->
-		<section class="grid-x grid-padding-x">
+		<section class="grid-x">
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
@@ -160,17 +161,30 @@
         </section>
         <!-- END WAITING STAT 3 -->
 
-        <!-- Section Two Starts-->
-        <section class="informationTwo grid-x grid-padding-x" id="testimonial-section">
-            <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
-                <h1>Testimonial Section</h1>
-            </div>     
+        <!-- TESTIMONIAL SECTION -->
+        <section class="grid-x" id="testimonial-section">
+            <div>
+                <h1></h1>
+            </div>
+            <div class="cell small-12 medium-auto large-auto">
+                <img src="" alt="">
+                Testimonial 1
+            </div> 
+            <div class="cell small-12 medium-auto large-auto">
+                <img src="" alt="">
+                Testimonial 2
+            </div> 
+            <div class="cell small-12 medium-auto large-auto">
+                <img src="" alt="">
+                Testimonial 3
+            </div> 
         </section>
-        <!-- Section Two Ends-->
+        <!-- END TESTIMONIAL SECTION -->
+
 
         
         <!-- WAITING STAT 4 -->
-		<section class="grid-x grid-padding-x">
+		<section class="grid-x">
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
@@ -181,33 +195,36 @@
         <!-- END WAITING STAT 4 -->
 
         
+
         <!-- LEARN MORE ABOUT ORGANS SECTION -->
-        <section class="grid-x grid-padding-x">
-            <div id="learn-more-section" class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
-                <h2>Learn More</h2>
-                <p>Want to learn more about organ doation? Click on an organ to learn how you can change someone's life forever.</p>
-                <div id="organ-icons-container" class="center-text">
-                    <img class="organ-icons" src="images/organs/heart.svg" alt="Heart">
-                    <img class="organ-icons" src="images/organs/intestine.svg" alt="Intestine">
-                    <img class="organ-icons" src="images/organs/kidney.svg" alt="Kidney">
-                    <img class="organ-icons" src="images/organs/liver.svg" alt="Liver">
-                    <img class="organ-icons" src="images/organs/lung.svg" alt="Lung">
-                    <img class="organ-icons" src="images/organs/pancreas.svg" alt="Pancreas">
-                    <img class="organ-icons" src="images/organs/pancreas.svg" alt="Bones">
-                    <img class="organ-icons" src="images/organs/pancreas.svg" alt="Cornea">
-                </div>
-                <div class="organInformation">
-                    <h2 class="organ-name bold">Organ Name</h2>
-                    <p class="organ-info">This is where the organ info pops up!</p>
-                    <p class="organ-fact">Did you know: ...</p>
-                </div>
-            </div>     
+        <section class="grid-x">
+        <div id="learn-more-section">
+            <div id="learn-more-section-header" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
+                    <h2 class="section-heading">Learn More</h2>
+                    <p class="organ-info">Want to learn more about organ doation? Click on an organ to learn how you can change someone's life forever.</p>
+            </div>
+            <div id="organ-icons-container" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
+                <img class="organ-icons" src="images/organs/heart.svg" alt="Heart">
+                <img class="organ-icons" src="images/organs/intestine.svg" alt="Intestine">
+                <img class="organ-icons" src="images/organs/kidney.svg" alt="Kidney">
+                <img class="organ-icons" src="images/organs/liver.svg" alt="Liver">
+                <img class="organ-icons" src="images/organs/lung.svg" alt="Lung">
+                <img class="organ-icons" src="images/organs/pancreas.svg" alt="Pancreas">
+                <img class="organ-icons" src="images/organs/bones.svg" alt="Bones">
+                <img class="organ-icons" src="images/organs/eyes.svg" alt="Cornea">
+            </div>
+            <div id="organInformation" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
+                <h2 class="organ-name bold">Organ Name</h2>
+                <p class="organ-info">This is where the organ info pops up!</p>
+                <p class="organ-fact">Did you know: ...</p>
+            </div>
+        </div>     
         </section>
-        <!-- END: LEARN MORE ABOUT ORGANS SECTION -->
+         <!-- END: LEARN MORE ABOUT ORGANS SECTION -->
 
 
         <!-- WAITING STAT 5 -->
-		<section class="grid-x grid-padding-x">
+		<section class="grid-x">
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
@@ -219,9 +236,9 @@
 
 
         <!-- WHAT ARE YOU WAITING FOR? FINAL IMG -->
-		<section class="grid-x grid-padding-x">
+		<section class="grid-x">
             <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
-                <img id="waywf-pre-footer-img" src="../Baile_J_FIP/images/bckgnd-pre-footer.png" alt="What are you waiting for?">
+                <img id="waywf-pre-footer-img" data-interchange="[../Baile_J_FIP/images/bckgnd-pre-footer-mobile.png, small], [../Baile_J_FIP/images/bckgnd-pre-footer-mobile.png, medium], [../Baile_J_FIP/images/bckgnd-pre-footer-desktop.png, large]" alt="What are you waiting for?">
             </div>
         </section>
         <!-- WHAT ARE YOU WAITING FOR? FINAL IMG -->
@@ -242,7 +259,7 @@
                     </div>
                     <!-- Register Btn -->
                     <div class="center-text">
-                        <p><a href="#" class="register-btn">REGISTER NOW</a></p>
+                        <p><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank" class="register-btn">REGISTER NOW</a></p>
                     </div>
                     <!-- Social Media Links -->	
                     <div class="social-icons-container center-text">
