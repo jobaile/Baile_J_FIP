@@ -1,91 +1,29 @@
-
+import HomeComponent from "./components/HomeComponent.js";
+import LoginComponent from "./components/LoginComponent.js";
 import DashboardComponent from './components/DashboardComponent.js';
-import LoginComponent from './components/LoginComponent.js';
-import AddUserComponent from './components/dashboard/AddUserComponent.js';
-import EditUserComponent from './components/dashboard/EditUserComponent.js';
-import AddTestimonialComponent from './components/dashboard/AddTestimonialComponent.js';
-import EditTestimonialComponent from './components/dashboard/EditTestimonialComponent.js';
-//import index from './components/homeComponent.js';
 
 
-let router = new VueRouter({
+const routes = [
+  { path: "/", name: "home", component: HomeComponent },
+  { path: "/home", name: "Home", component: HomeComponent },
+  { path: "/login", name: "login", component: LoginComponent },
+  { path: "/dashboard", name: "dashboard", component: DashboardComponent}
+];
 
-  routes: [
-      // { path: '/', redirect: { name: "index"} },
-      // { path: '/home', redirect: { name: "index"}, component: index },
-      { path: '/', redirect: { name: "login"} },
-      { path: '/login', name: "login", component: LoginComponent },
-      { path: '/dashboard', name: 'dashboard', component: DashboardComponent },
-      { path: '/adduser', name: 'adduser', component: AddUserComponent },
-      { path: '/edituser', name: 'edituser', component: EditUserComponent },
-      { path: '/addtestimonial', name: 'addtestimonial', component: AddTestimonialComponent },
-      { path: '/edittestimonial', name: 'edittestimonial', component: EditTestimonialComponent },
-    ]
+const router = new VueRouter({
+  routes
 });
 
 const vm = new Vue({
- 
-  data: {
-    authenticated: false,
-
-    genericMessage: "hello from the parent",
-
-    mockAccount: {
-      username: "user",
-      password: "password"
-    },
-
-    user: [],
-
-    //currentUser: {},
-
-    toastmessage: "Login failed!"
-  },
-
-  created: function() {
-    // do a session check and set authenticated to true if the session still exists
-    // if the cached user exists, then just navigate to their user home page
-
-    // the localstorage session will persist until logout
-
-    if (localStorage.getItem("cachedUser")) {
-      let user = JSON.parse(localStorage.getItem("cachedUser"));
-      this.authenticated = true;
-      // params not setting properly, so this route needs to be debugged a bit...
-      this.$router.push({ name: "home", params: { currentuser: user }});
-    } else {
-      this.$router.push({ path: "/login"} );
-    }    
-  },
-
+  data: {},
+  
   methods: {
-    setAuthenticated(status, data) {
-      this.authenticated = status;
-      this.user = data;
-    },
-
-    logout() {
-      // delete local session
-      if (localStorage.getItem("cachedUser")) {
-        localStorage.removeItem("cachedUser");
-      }
-      // push user back to login page
-      this.$router.push({ path: "/login" });
-      this.authenticated = false;
-      
-      
+    openNav() {
+      $('[data-curtain-menu-button]').click(function(){
+        $('body').toggleClass('curtain-menu-open');
+      })
     }
   },
 
   router: router
 }).$mount("#app");
-
-router.beforeEach((to, from, next) => {
-  console.log('router guard fired!', to, from, vm.authenticated);
-
-  if (vm.authenticated == false) {
-    next("/login");
-  } else {
-    next();
-  }
-});
