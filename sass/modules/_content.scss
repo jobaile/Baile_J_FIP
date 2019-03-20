@@ -1,18 +1,7 @@
-.informationOne {
-    background-color: $black;
-}
-
-.informationTwo {
-    background-color: $grey;
-}
-
-.organSection {
-    background-color: $red;
-}
-
 /* ----------------------------------- Hero Video Section ----------------------------------- */
 video {
-    width: 100%
+    width: 100%;
+    margin-top: 0px;
 }
 
 /* ----------------------------------- Waiting Statistic Sections ----------------------------------- */
@@ -87,6 +76,9 @@ video {
     height: 100%;
     width: 100%;
     margin: 0px;
+    background-attachment: fixed;
+    background-position: center;
+
 }
 
 .help-section-content {
@@ -123,7 +115,7 @@ video {
     margin-top: 40px
 }
 
-/* ----------------------------------- Learn More Sections ----------------------------------- */
+/* ----------------------------------- Learn More Section ----------------------------------- */
 #learn-more-section {
     background-image: url("../images/bckgnd-learn-more.jpeg");
     background-position: center; /* Center the image */
@@ -132,6 +124,21 @@ video {
     height: 100%;
     width: 100%;
     margin: 0px;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+#organInformation {
+    margin: 20px 0px 50px 0px;
+}
+
+#learn-more-section-header {
+    color: $red;
+}
+
+#organ-icons-container {
+    margin: 40px 0px 30px 0px;
 }
 
 .organ-icons {
@@ -143,13 +150,14 @@ video {
 .organ-name {
     font-size: 30px;
     line-height: 36px;
-    margin-top: 30px;
+    color: $red;
 }
 
 .organ-info {
     font-size: 22px;
     line-height: 26px;
     margin-top: 15px;
+    color: $red;
 }
 
 .organ-fact {
@@ -157,4 +165,5 @@ video {
     line-height: 26px;
     margin-top: 15px;
     font-style: italic;
+    color: $red;
 }
