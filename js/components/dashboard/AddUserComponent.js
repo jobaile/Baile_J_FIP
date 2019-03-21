@@ -1,4 +1,4 @@
-import NavDBComponent from "./NavDBComponent.js";
+import NavDBComponent from "./layouts/DBNavComponent.js";
 
 export default {
     template: `

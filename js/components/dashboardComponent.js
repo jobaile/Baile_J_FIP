@@ -1,12 +1,10 @@
-import UserComponent from './UserComponent.js';
-import NavDBComponent from "./dashboard/NavDBComponent.js";
+import MainNavComponent from "../components/layouts/MainNavComponent.js";
+import NavDBComponent from "./layouts/DBNavComponent.js";
 
 export default {
 	template: `
 	<section>
 		<NavDBComponent />
-		<h1>Welcome, [username]!</h1>
-		<p class="text-center">If you have any questions, please contact the server administrator.</p>
 	</section>
 	`,
 
@@ -37,7 +35,7 @@ export default {
 	},
 
 	components: {
-		user: UserComponent,
-		NavDBComponent: NavDBComponent
+		NavDBComponent: NavDBComponent,
+		MainNavComponent: MainNavComponent
 	}
 }

@@ -10,10 +10,9 @@ Organ Donation information will go here
 
 2. Install dependencies
 `$ npm install`
-`$ npm install gulp-sass`
 
 3. Compile style files
-`$ gulp`
+`gulp`
 
 4. Add project folder to your local server (MAMP for MacOS users, XAMPP or WAMP for Windows or Linux)
 
