@@ -33,3 +33,33 @@ function createUser($fname,$username,$password,$email){
     return $message;
   }
 }
+
+function get_single_organ($pdo, $organ) {
+  include('connect.php');
+  $query = "SELECT * FROM tbl_organs WHERE id = '$organ'";
+
+  $get_video = $pdo->query($query);
+  $results = array();
+
+  while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
+      $results[] = $row;
+
+      // you could run subresult queries here - just write another function and append.
+  }
+
+  return $results;
+}
+
+function get_all_organs($pdo) {
+  include('connect.php');
+  $query = "SELECT * FROM tbl_organs";
+
+  $get_video = $pdo->query($query);
+  $results = array();
+
+  while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
+      $results[] = $row;
+  }
+
+  return $results;
+}
