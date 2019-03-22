@@ -24,6 +24,7 @@ export default {
                     <li><router-link :to="{path: '/edituser'}">Edit Users</router-link></li>
                     <li><router-link :to="{path: '/addtestimonial'}">Add A Testimonial</router-link></li>
                     <li><router-link :to="{path: '/edittestimonial'}">Edit Testimonials</router-link></li>	
+                    <li><button id="logoutbutton" type="button" class="button" v-on:click="logout()">Log Out</button></li>
                     <!-- Social Media Links -->	
                     <li>
                         <a href="#" target="_blank">
@@ -60,6 +61,7 @@ export default {
                 <li class="nav-links-large"><router-link :to="{path: '/edituser'}">Edit Users</router-link></li>
                 <li class="nav-links-large"><router-link :to="{path: '/addtestimonial'}">Add A Testimonial</router-link></li>
                 <li class="nav-links-large"><router-link :to="{path: '/edittestimonial'}">Edit Testimonials</router-link></li>
+                <li class="nav-links-large"><button id="logoutbutton" type="button" class="button" @click="logout">Log Out</button></li>
                 </ul>
             </nav>
         </header>
@@ -73,6 +75,16 @@ export default {
             $('[data-curtain-menu-button]').click(function(){
               $('body').toggleClass('curtain-menu-open');
             })
-          }
+          },
+
+          logout() {
+            // delete local session
+            if (localStorage.getItem("cachedUser")) {
+              localStorage.removeItem("cachedUser");
+            }
+            //push user back to login page
+            this.$router.push({ path: "/login" });
+            this.authenticated = false;
+          },
     }
 }

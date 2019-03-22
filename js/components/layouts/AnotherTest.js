@@ -63,8 +63,8 @@ export default {
 
             var currentData = this.videodata.filter(tbl_testimonial => tbl_testimonial.t_id === dataKey);
 
-            //this.tname = currentData[0].t_name;
-            //this.tsource = currentData[0].t_vid;
+            this.tname = currentData[0].t_name;
+            this.tsource = currentData[0].t_vid;
         }
     }
 }

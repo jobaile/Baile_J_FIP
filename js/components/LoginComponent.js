@@ -18,8 +18,7 @@ export default {
                 </div>
             </form>
         <div class="form-footer">
-            <p><a href="#">Create an account</a></p>
-            <p><a href="#">Forgot password?</a></p>
+            <p><a href="#/">Go back home</a></p>
         </div>
     </div>`,
  
@@ -90,15 +89,5 @@ export default {
                  console.log("A username and password must be present");
             }
         },
-
-        logout() {
-            // delete local session
-            if (localStorage.getItem("cachedUser")) {
-              localStorage.removeItem("cachedUser");
-            }
-            // push user back to login page
-            this.$router.push({ path: "/login" });
-            this.authenticated = false;
-          },
     }
  }
