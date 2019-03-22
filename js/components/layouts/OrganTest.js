@@ -8,9 +8,9 @@ export default {
                 <img :src="'images/organs/' + organ.organ_icon" v-for="organ in organdata" class="organ-icons" alt="organ" @click="organdetails()">     
             </div>
             <div id="organInformation" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
-                <h2 class="organ-name bold" v-html="singleorgandata.organ_name"></h2>
-                <p class="organ-info" v-html="singleorgandata.organ_infoOne"></p>    
-                <p class="organ-fact" v-html="singleorgandata.organ_infoTwo"></p>    
+                <h2 class="organ-name bold">{{singleorgandata.organ_name}}</h2>
+                <p class="organ-info">{{singleorgandata.organ_infoOne}}</p>    
+                <p class="organ-fact">{{singleorgandata.organ_infoTwo}}</p>    
             </div>
         </div>     
     </section>
@@ -20,7 +20,6 @@ export default {
     return {
       organdata: [],
       singleorgandata: [],
-
     };
   },
 
@@ -35,13 +34,19 @@ export default {
             fetch(url) // pass in the one or many query
             .then(res => res.json())
             .then(data => {
+                //grabs all the organs
                 this.organdata = data;
+
                 this.singleorgandata = data[0];
                 console.log(data);
             })
             .catch(function(error) {
                 console.log(error);
             });
+        },
+
+        organdetails(organ){
+            this.singleorgandata = organ;
         }
     }
   };

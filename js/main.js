@@ -2,6 +2,7 @@ import HomeComponent from "./components/HomeComponent.js";
 import LoginComponent from "./components/LoginComponent.js";
 import DashboardComponent from './components/DashboardComponent.js';
 import TestComponent from './components/layouts/OrganTest.js';
+import TestTwoComponent from './components/layouts/AnotherTest.js';
 
 
 const routes = [
@@ -9,7 +10,8 @@ const routes = [
   { path: "/home", name: "Home", component: HomeComponent },
   { path: "/login", name: "login", component: LoginComponent },
   { path: "/dashboard", name: "dashboard", component: DashboardComponent},
-  { path: "/test", name: "test", component: TestComponent}
+  { path: "/test", name: "test", component: TestComponent},
+  { path: "/testtwo", name: "testtwo", component: TestTwoComponent}
 
 ];
 

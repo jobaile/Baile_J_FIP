@@ -81,16 +81,7 @@ export default {
                 <h1></h1>
             </div>
             <div class="cell small-12 medium-auto large-auto">
-                <img src="" alt="">
-                Testimonial 1
-            </div> 
-            <div class="cell small-12 medium-auto large-auto">
-                <img src="" alt="">
-                Testimonial 2
-            </div> 
-            <div class="cell small-12 medium-auto large-auto">
-                <img src="" alt="">
-                Testimonial 3
+                <img v-for="tbl_testimonial in testimonialdata" :src="'images/testimonials/' + tbl_testimonial.t_pic" alt="testimonial pic">
             </div> 
         </section>
         <!-- END TESTIMONIAL SECTION -->
@@ -153,19 +144,25 @@ export default {
     `,
     data: function () {
         return {
-          organdata: [],
-          singleorgandata: [],
+            //Organ details
+            organdata: [],
+            singleorgandata: [],
+
+            //Testimonial details
+            testimonialdata : [],
+            singletestimonialdata : [],
     
         };
       },
     
         created : function() {
             this.fetchOrganData(null);
+            this.fetchTestimonialData(null);
         },
     
         methods : {
             fetchOrganData(organ) {
-                let url = organ ? `./admin/index.php?organ=${organ}` : './admin/index.php';
+                let url = organ ? `./admin/organ.php?organ=${organ}` : './admin/organ.php';
     
                 fetch(url) // pass in the one or many query
                 .then(res => res.json())
@@ -177,6 +174,27 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
-            }
+            },
+
+            fetchTestimonialData(testimonial) {
+                let url = testimonial ? `./admin/testimonial.php?testimonial=${testimonial}` : './admin/testimonial.php';
+    
+                fetch(url) // pass in the one or many query
+                .then(res => res.json())
+                .then(data => {
+                    if (testimonial) {
+                        // getting one movie, so use the single array
+                        console.log(data);
+                        this.singletestimonialdata = data[0];
+                    } else {
+                        // push all the video (or portfolio content) into the video array
+                        console.log(data);
+                        this.testimonialdata = data;
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            },
         }
 }

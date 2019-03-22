@@ -63,3 +63,33 @@ function get_all_organs($pdo) {
 
   return $results;
 }
+
+function get_single_testimonial($pdo, $testimonial) {
+  include('connect.php');
+  $query = "SELECT * FROM tbl_testimonial WHERE t_id = '$testimonial'";
+
+  $get_video = $pdo->query($query);
+  $results = array();
+
+  while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
+      $results[] = $row;
+
+      // you could run subresult queries here - just write another function and append.
+  }
+
+  return $results;
+}
+
+function get_all_testimonials($pdo) {
+  include('connect.php');
+  $query = "SELECT * FROM tbl_testimonial";
+
+  $get_video = $pdo->query($query);
+  $results = array();
+
+  while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
+      $results[] = $row;
+  }
+
+  return $results;
+}
