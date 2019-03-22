@@ -1,4 +1,3 @@
-import MainNavComponent from "../components/layouts/MainNavComponent.js";
 import NavDBComponent from "./layouts/DBNavComponent.js";
 
 export default {
@@ -6,6 +5,7 @@ export default {
 	template: `
 	<section>
 		<NavDBComponent />
+		<p>Welcome, this is the dashboard.</p>
 	</section>
 	`,
 
@@ -37,6 +37,5 @@ export default {
 
 	components: {
 		NavDBComponent: NavDBComponent,
-		MainNavComponent: MainNavComponent
 	}
 }

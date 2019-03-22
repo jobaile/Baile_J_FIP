@@ -3,6 +3,8 @@ import LoginComponent from "./components/LoginComponent.js";
 import DashboardComponent from './components/DashboardComponent.js';
 import TestComponent from './components/layouts/OrganTest.js';
 import TestTwoComponent from './components/layouts/AnotherTest.js';
+import AddUser from './components/dashboard/AddUserComponent.js';
+import Lightbox from './components/layouts/LightboxComponent.js';
 
 
 const routes = [
@@ -11,7 +13,10 @@ const routes = [
   { path: "/login", name: "login", component: LoginComponent },
   { path: "/dashboard", name: "dashboard", component: DashboardComponent},
   { path: "/test", name: "test", component: TestComponent},
-  { path: "/testtwo", name: "testtwo", component: TestTwoComponent}
+  { path: "/testtwo", name: "testtwo", component: TestTwoComponent},
+  { path: "/lightbox", name: "lightbox", component: Lightbox},
+  { path: "/adduser", name: "adduser", component: AddUser},
+
 
 ];
 

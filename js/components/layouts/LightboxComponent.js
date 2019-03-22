@@ -4,7 +4,7 @@ export default {
 
         <!-- Lightbox Starts -->
 
-        <div class="grid-x" class="video-lightbox" ref="lbox">
+        <div class="grid-x" ref="lbox">
             
             <!-- Exit button -->
             <button class="close-button" @click="closebox">
@@ -17,7 +17,7 @@ export default {
             </div>
 
             <div class="video-container grid-x">
-                <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="cell large-12 medium-12 small-12"></video>
+                <video src="video/testimonials/andrew.mp4"></video>
             </div>
 
             <div class="lightbox-information">
