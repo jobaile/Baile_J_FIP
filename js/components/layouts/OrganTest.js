@@ -29,7 +29,7 @@ export default {
 
     methods : {
         fetchOrganData(organ) {
-            let url = organ ? `./admin/index.php?organ=${organ}` : './admin/index.php';
+            let url = organ ? `./admin/organ.php?organ=${organ}` : './admin/index.php';
 
             fetch(url) // pass in the one or many query
             .then(res => res.json())
