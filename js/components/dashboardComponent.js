@@ -2,6 +2,7 @@ import MainNavComponent from "../components/layouts/MainNavComponent.js";
 import NavDBComponent from "./layouts/DBNavComponent.js";
 
 export default {
+	props: ['currentuser'],
 	template: `
 	<section>
 		<NavDBComponent />

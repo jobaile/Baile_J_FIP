@@ -20,7 +20,9 @@ const router = new VueRouter({
 });
 
 const vm = new Vue({
-  data: {},
+  data: {
+    currentUser: {},
+  },
   
   methods: {
     openNav() {
