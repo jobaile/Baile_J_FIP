@@ -30,7 +30,8 @@ export default {
         <!-- ABOUT SECTION-->
          <section class="grid-x" id="section-about">
             <div id="about-section-bckgnd" class="small-12 small-offset-0 medium-12 medium-offset-0 large-12 large-offset-0 cell">
-                <img data-interchange="[/Baile_J_FIP/images/bckgnd-about-mobile.png, small], [/Baile_J_FIP/images/bckgnd-about.png, medium], [/Baile_J_FIP/images/bckgnd-about.png, large]" alt="Waiting at a bus stop">
+                <img class="show-for-small-only" src="/Baile_J_FIP/images/bckgnd-about-mobile.png" alt="Waiting at a bus stop">
+                <img class="hide-for-small-only" src="/Baile_J_FIP/images/bckgnd-about.png" alt="Waiting at a bus stop"> 
                 <p class="about-text">The best things in life are worth waiting for, meeting the love of your life, finally getting to go on your dream vacation or even just standing in line for the perfect cup of coffee. But some waits are harder than others. So, while you’re waiting for your wait to come to an end, why not help change someone else’s story and sign up to be an organ donor.
                     <br><br>
                     <span class="bold">So, what are you waiting for?</span>
@@ -132,7 +133,8 @@ export default {
         <!-- WHAT ARE YOU WAITING FOR? FINAL IMG -->
 		<section class="grid-x">
             <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
-                <img id="waywf-pre-footer-img" data-interchange="[/Baile_J_FIP/images/bckgnd-pre-footer-mobile.png, small], [/Baile_J_FIP/images/bckgnd-pre-footer-mobile.png, medium], [/Baile_J_FIP/images/bckgnd-pre-footer-desktop.png, large]" alt="What are you waiting for?">
+                <img class="show-for-small-only" id="waywf-pre-footer-img" src="/Baile_J_FIP/images/bckgnd-pre-footer-mobile.png" alt="What are you waiting for?">
+                <img class="hide-for-small-only" id="waywf-pre-footer-img" src="/Baile_J_FIP/images/bckgnd-pre-footer-desktop.png" alt="What are you waiting for?">
             </div>
         </section>
         <!-- WHAT ARE YOU WAITING FOR? FINAL IMG -->
