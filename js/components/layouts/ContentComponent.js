@@ -81,8 +81,35 @@ export default {
             <div>
                 <h1></h1>
             </div>
+
+            <!-- Lightbox Starts -->
+
+            <div class="container lightbox" ref="lbox">
+                
+                <!-- Exit button -->
+                <button class="close-button" @click="closebox">
+                    <span>&times;</span>
+                </button>    
+                <!-- Exit button -->
+            
+                <div class="lightbox-container">
+                    <h4 class="media-title">{{ tname }}</h4>
+                </div>
+    
+                <div class="video-container grid-x">
+                    <video :src="'video/testimonials/' + tsource" autoplay controls></video>
+                </div>
+    
+                <div class="lightbox-information">
+                    <p> {{ tinfo }} </p>
+                </div>
+    
+            </div>
+    
+            <!-- Lightbox Ends -->
+
             <div class="cell small-12 medium-auto large-auto">
-                <img v-for="tbl_testimonial in testimonialdata" :src="'images/testimonials/' + tbl_testimonial.t_pic" alt="testimonial pic">
+                <img v-for="item in testimonialdata" :src="'images/testimonials/' + item.t_pic" alt="testimonial pic" @click="loadMovie(item)">
             </div> 
         </section>
         <!-- END TESTIMONIAL SECTION -->
@@ -94,7 +121,7 @@ export default {
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
-                    <h2 class="stat-text">Less than 20% of Canaidans have plans to donate their organs.</h2> 
+                    <h2 class="stat-text">Less than 20% of Canadians have plans to donate their organs.</h2> 
                 </div>                     
             </div>
         </section>
@@ -106,12 +133,12 @@ export default {
         <section class="grid-x">
         <div id="learn-more-section">
             <div id="organ-icons-container" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
-                <img :src="'images/organs/' + organ.organ_icon" v-for="organ in organdata" class="organ-icons" alt="organ" @click="organdetails()">     
+                <img :src="'images/organs/' + organ.organ_icon" v-for="organ in organdata" class="organ-icons" alt="organ" @click="organdetails(organ)">     
             </div>
             <div id="organInformation" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
-                <h2 class="organ-name bold" v-html="singleorgandata.organ_name"></h2>
-                <p class="organ-info" v-html="singleorgandata.organ_infoOne"></p>    
-                <p class="organ-fact" v-html="singleorgandata.organ_infoTwo"></p>    
+                <h2 class="organ-name bold">{{ oname }}</h2>
+                <p class="organ-info"> {{ infoOne }}</p>    
+                <p class="organ-fact"> {{infoTwo }}</p>    
             </div>
         </div>     
         </section>
@@ -150,9 +177,17 @@ export default {
             organdata: [],
             singleorgandata: [],
 
+            oname: "", //organ name
+            infoOne: "", //information one
+            infoTwo: "", //information two
+
             //Testimonial details
             testimonialdata : [],
             singletestimonialdata : [],
+
+            tname : "", //testimonial name
+            tsource : "", //testimonial video
+            tinfo : "", //info
     
         };
       },
@@ -178,6 +213,13 @@ export default {
                 });
             },
 
+            organdetails({organ_name, organ_infoOne, organ_infoTwo}){
+                console.log('organ info');
+                this.oname = organ_name;
+                this.infoOne = organ_infoOne;
+                this.infoTwo = organ_infoTwo;
+            },
+
             fetchTestimonialData(testimonial) {
                 let url = testimonial ? `./admin/testimonial.php?testimonial=${testimonial}` : './admin/testimonial.php';
     
@@ -197,6 +239,19 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
+            },
+
+            loadMovie({t_name, t_vid, t_info}) {
+                this.$refs.lbox.style.display = "block";
+                console.log('this would be the lightbox');
+                this.tname = t_name;
+                this.tsource = t_vid;
+                this.tinfo = t_info;
+            },
+
+            closebox: function() {
+                //closes the lightbox
+              this.$refs.lbox.style.display = "none";
             },
         }
 }

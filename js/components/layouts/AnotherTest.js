@@ -3,11 +3,11 @@ export default {
     <div class="container">
 
         <div>
-            <img v-for="tbl_testimonial in videodata" :src="'images/testimonials/' + tbl_testimonial.t_pic" alt="testimonial pic" @click="loadMovie">
+            <img v-for="item in testimonialdata" :src="'images/testimonials/' + item.t_pic" alt="testimonial pic" @click="loadMovie(item)">
         </div>
 
         <div>
-            <h3 class="movie-title"> {{ tname }}</h3>
+            <h3 class="movie-title"> {{ tname }} </h3>
             <video :src="'video/testimonials/' + tsource" autoplay controls></video>
             <p> {{ tinfo }} </p>
         </div>
@@ -18,8 +18,8 @@ export default {
     data: function () {
         return {
           //Testimonials 
-            videodata : [],
-            singlemoviedata : [],
+            testimonialdata : [],
+            singletestimonialdata : [],
 
             //Testimonial Details
             tname : "",
@@ -42,11 +42,11 @@ export default {
                 if (testimonial) {
                     // getting one movie, so use the single array
                     console.log(data);
-                    this.singlemoviedata = data[0];
+                    this.singletestimonialdata = data[0];
                 } else {
                     // push all the video (or portfolio content) into the video array
                     console.log(data);
-                    this.videodata = data;
+                    this.testimonialdata = data;
                 }
             })
             .catch(function(error) {
@@ -54,17 +54,10 @@ export default {
             });
         },
         
-        loadMovie(e) {
+        loadMovie({t_name, t_vid}) {
             console.log('this would be the lightbox');
-
-            this.singlemoviedata = currentData;
-
-            let dataKey = e.currentTarget.getAttribute('href');
-
-            var currentData = this.videodata.filter(tbl_testimonial => tbl_testimonial.t_id === dataKey);
-
-            this.tname = currentData[0].t_name;
-            this.tsource = currentData[0].t_vid;
+            this.tname = t_name;
+            this.tsource = t_vid;
         }
     }
 }
