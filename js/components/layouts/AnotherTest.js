@@ -54,7 +54,7 @@ export default {
             });
         },
         
-        loadMovie(t_name, t_vid) {
+        loadMovie({t_name, t_vid}) {
             console.log('this would be the lightbox');
             this.tname = t_name;
             this.tsource = t_vid;
