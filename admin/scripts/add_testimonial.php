@@ -50,10 +50,10 @@ if(isset($_REQUEST['btn_add']))
 		{	
 			if(!file_exists($videopath)) //ensures that the file does not exist
 			{
-				if($sizevid < 80000000) { //80mb file size
-					move_uploaded_file($tempvid, "../../videos/testimonials/" .$video_file); 
+				if($sizevid < 1000000) { //50mb file size
+					move_uploaded_file($tempvid, "../../video/testimonials/" .$video_file); 
 				} else {
-					$error="80MB Upload Limit"; 
+					$error="50MB Upload Limit"; 
 				}
 			} else {	
 				$error="Video Already Exists"; 
@@ -64,7 +64,7 @@ if(isset($_REQUEST['btn_add']))
 
 		if(!isset($error))
 		{
-			$insert_testimonial='INSERT INTO tbl_file(name, image, video) VALUES(:tname,:timage, :tvideo)'; //sql insert query					
+			$insert_testimonial='INSERT INTO tbl_testimonial(t_name, t_pic, t_vid) VALUES(:tname,:timage, :tvideo)'; //sql insert query					
 			$insert_testimonial_set = $pdo->prepare($insert_testimonial);
 			$insert_testimonial_set->execute(
 				array(
@@ -73,13 +73,12 @@ if(isset($_REQUEST['btn_add']))
 					':tvideo'=>$video_file,
 				)
 			);
-            
-            // this is creating an error when uploading a new testimonial
-            //  uploading is working though - need to find a way to redirect user after successful upload
-			// if($insert_stmt->execute())
-			// {
-			// 	$insertMsg="File Uploaded!"; 
-			// }
+
+			if($insert_testimonial_set->rowCount()){
+				redirect_to('../../index.html#/dashboard');
+			  }else{
+				redirect_to('../../index.html#/addtestimonial');
+			}
 		}
 	}
 	catch(PDOException $e)

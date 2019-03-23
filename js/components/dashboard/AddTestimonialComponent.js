@@ -1,10 +1,6 @@
-import NavDBComponent from "./layouts/DBNavComponent.js";
-
 export default {
-    props: ['currentuser'],
     template: `
     <section>
-    <NavDBComponent />
     <form action="./admin/scripts/add_testimonial.php" method="post" enctype="multipart/form-data">
 					
         <div>
@@ -24,14 +20,16 @@ export default {
 
         <div>
         <input type="submit" name="btn_add" class="btn" value="Submit">
-        <a href="index.php" class="btn">Cancel</a>
+        <a href="#/addtestimonial" class="btn" @click="reload">Start Over</a>
         </div>
             
     </form>
     </section>
     `,
 
-    components: {
-		NavDBComponent: NavDBComponent
-	}
+    methods: {
+        reload(){
+          window.location.reload()
+        }
+      }
 }
