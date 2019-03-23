@@ -56,12 +56,12 @@ export default {
             <nav class="hide-for-small-only medium-10 medium-offset-0 large-10 large-offset-0 cell large-nav">
                 <!-- Nav Links -->
                 <ul class="float-right">
-                    <li class="nav-links-large"><a href="#">Home</a></li>
-                    <li class="nav-links-large"><a href="#">About</a></li>
-                    <li class="nav-links-large"><a href="#">Act Now</a></li>
-                    <li class="nav-links-large"><a href="#">Next Steps</a></li>
-                    <li class="nav-links-large"><a href="#">Learn More</a></li>	
-                    <li class="nav-links-large"><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
+                    <router-link tag="li" class="nav-links-large"><a href="#">Home</a></router-link>
+                    <router-link tag="li" class="nav-links-large"><a href="#">About</a></router-link>
+                    <router-link tag="li" class="nav-links-large"><a href="#">Act Now</a></router-link>
+                    <router-link tag="li" class="nav-links-large"><a href="#">Next Steps</a></router-link>
+                    <router-link tag="li" class="nav-links-large"><a href="#">Learn More</a></router-link>	
+                    <router-link tag="li" class="nav-links-large"><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
                 </ul>
             </nav>
         </header>
