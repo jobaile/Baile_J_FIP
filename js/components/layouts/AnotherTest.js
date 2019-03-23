@@ -3,7 +3,7 @@ export default {
     <div class="container">
 
         <div>
-            <img v-for="item in videodata" :src="'images/testimonials/' + item.t_pic" alt="testimonial pic" @click="loadMovie(item)">
+            <img v-for="item in testimonialdata" :src="'images/testimonials/' + item.t_pic" alt="testimonial pic" @click="loadMovie(item)">
         </div>
 
         <div>
@@ -18,8 +18,8 @@ export default {
     data: function () {
         return {
           //Testimonials 
-            videodata : [],
-            singlemoviedata : [],
+            testimonialdata : [],
+            singletestimonialdata : [],
 
             //Testimonial Details
             tname : "",
@@ -42,11 +42,11 @@ export default {
                 if (testimonial) {
                     // getting one movie, so use the single array
                     console.log(data);
-                    this.singlemoviedata = data[0];
+                    this.singletestimonialdata = data[0];
                 } else {
                     // push all the video (or portfolio content) into the video array
                     console.log(data);
-                    this.videodata = data;
+                    this.testimonialdata = data;
                 }
             })
             .catch(function(error) {
