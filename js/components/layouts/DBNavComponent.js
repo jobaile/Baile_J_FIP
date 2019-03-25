@@ -21,9 +21,7 @@ export default {
                     <!-- Nav Links -->
                     <li><router-link :to="{path: '/dashboard'}">Dashboard</router-link></li>
                     <li><router-link :to="{path: '/adduser'}">Add A User</router-link></li>
-                    <li><router-link :to="{path: '/edituser'}">Edit Users</router-link></li>
                     <li><router-link :to="{path: '/addtestimonial'}">Add A Testimonial</router-link></li>
-                    <li><router-link :to="{path: '/edittestimonial'}">Edit Testimonials</router-link></li>
                     <li><a href="#" @click="logout">Log Out</a></li>	
                     <!-- Social Media Links -->	
                     <li>
@@ -58,9 +56,7 @@ export default {
                 <ul class="float-right">
                 <li class="nav-links-large"><router-link :to="{path: '/dashboard'}">Dashboard</router-link></li>
                 <li class="nav-links-large"><router-link :to="{path: '/adduser'}">Add A User</router-link></li>
-                <li class="nav-links-large"><router-link :to="{path: '/edituser'}">Edit Users</router-link></li>
                 <li class="nav-links-large"><router-link :to="{path: '/addtestimonial'}">Add A Testimonial</router-link></li>
-                <li class="nav-links-large"><router-link :to="{path: '/edittestimonial'}">Edit Testimonials</router-link></li>
                 <li class="nav-links-large"><a href="#" @click="logout">Log Out</a></li>	
                 </ul>
             </nav>

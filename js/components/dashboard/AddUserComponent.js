@@ -45,10 +45,7 @@ export default {
 		});
 	  }
     },
-    
-    components: {
-        NavDBComponent : NavDBComponent
-		},
+  
 		
 		methods: {
 			reload(){
