@@ -15,9 +15,9 @@ const routes = [
   { path: "/dashboard", name: "dashboard", component: DashboardComponent, props: true,
     children:[
       { path: "/adduser", name: "adduser", component: AddUserComponent },
-      { path: "/edituser", name: "edituser", component: EditUserComponent },
+      // { path: "/edituser", name: "edituser", component: EditUserComponent },
       { path: "/addtestimonial", name: "addtestimonial", component: AddTestimonialComponent },
-      { path: "/edittestimonial", name: "edittestimonial", component: EditTestimonialComponent },
+      // { path: "/edittestimonial", name: "edittestimonial", component: EditTestimonialComponent },
     ]},
 
 ];
