@@ -1,7 +1,5 @@
-import NavDBComponent from "./layouts/DBNavComponent.js";
 
 export default {
-    props: ['currentuser'],
     template: `
     <section>
     <NavDBComponent />
@@ -30,8 +28,4 @@ export default {
 
     </section>
     `,
-
-    components: {
-		NavDBComponent: NavDBComponent
-	}
 }

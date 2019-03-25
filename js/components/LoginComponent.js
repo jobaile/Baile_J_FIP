@@ -43,7 +43,7 @@ export default {
           let user = JSON.parse(localStorage.getItem("cachedUser"));
           this.authenticated = true;
           // params not setting properly, so this route needs to be debugged a bit...
-          this.$router.push({ name: "dashboard", params: { currentuser: user }});
+          this.$router.push({ name: "adduser", params: { currentuser: user }});
         } else {
           this.$router.push({ path: "/login"} );
         }    

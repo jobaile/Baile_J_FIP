@@ -2,8 +2,6 @@
 	require_once('config.php');
     confirm_logged_in();
     
-    //for some reason isn't loading
-
 	if(isset($_POST['submit'])){
 		//Do some preprocess for the data
 		$fname = trim($_POST['fname']);

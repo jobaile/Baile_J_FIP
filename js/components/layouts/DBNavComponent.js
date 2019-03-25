@@ -6,7 +6,7 @@ export default {
     <h1 class="hidden">Main Navigation</h1>
         <!-- the trigger -->
         <div class="curtain-menu-button show-for-small-only" data-curtain-menu-button>
-            <div class="curtain-menu-button-toggle" @click="openNav()"> 
+            <div class="curtain-menu-button-toggle" @click="openNav"> 
                 <div class="bar1"></div>
                 <div class="bar2"></div>
             </div>
@@ -21,10 +21,8 @@ export default {
                     <!-- Nav Links -->
                     <li><router-link :to="{path: '/dashboard'}">Dashboard</router-link></li>
                     <li><router-link :to="{path: '/adduser'}">Add A User</router-link></li>
-                    <li><router-link :to="{path: '/edituser'}">Edit Users</router-link></li>
                     <li><router-link :to="{path: '/addtestimonial'}">Add A Testimonial</router-link></li>
-                    <li><router-link :to="{path: '/edittestimonial'}">Edit Testimonials</router-link></li>	
-                    <li><button id="logoutbutton" type="button" class="button" v-on:click="logout()">Log Out</button></li>
+                    <li><a href="#" @click="logout">Log Out</a></li>	
                     <!-- Social Media Links -->	
                     <li>
                         <a href="#" target="_blank">
@@ -58,10 +56,8 @@ export default {
                 <ul class="float-right">
                 <li class="nav-links-large"><router-link :to="{path: '/dashboard'}">Dashboard</router-link></li>
                 <li class="nav-links-large"><router-link :to="{path: '/adduser'}">Add A User</router-link></li>
-                <li class="nav-links-large"><router-link :to="{path: '/edituser'}">Edit Users</router-link></li>
                 <li class="nav-links-large"><router-link :to="{path: '/addtestimonial'}">Add A Testimonial</router-link></li>
-                <li class="nav-links-large"><router-link :to="{path: '/edittestimonial'}">Edit Testimonials</router-link></li>
-                <li class="nav-links-large"><button id="logoutbutton" type="button" class="button" @click="logout">Log Out</button></li>
+                <li class="nav-links-large"><a href="#" @click="logout">Log Out</a></li>	
                 </ul>
             </nav>
         </header>

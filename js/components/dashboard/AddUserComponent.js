@@ -1,10 +1,6 @@
-import NavDBComponent from "../layouts/DBNavComponent.js";
-
 export default {
-	props: ['currentuser'],
 	template: `
     <section>
-        <NavDBComponent/>
         <div>
             <form action="./admin/scripts/admin_createuser.php" method="post">
             <label for="first-name">First Name:</label>
@@ -18,8 +14,9 @@ export default {
 
             <label for="password">Password:</label>
             <input type="password" name="password" class="input"><br><br>
-            
-            <button type="submit" name="submit">Create User</button>
+						
+						<input type="submit" name="submit" class="btn" value="Create User">
+						<a href="#/adduser" class="btn" @click="reload">Start Over</a>
             </form>
         </div>
 	</section>
@@ -48,8 +45,11 @@ export default {
 		});
 	  }
     },
-    
-    components: {
-        NavDBComponent : NavDBComponent
-    }
+  
+		
+		methods: {
+			reload(){
+				window.location.reload()
+			}
+		}
 }
