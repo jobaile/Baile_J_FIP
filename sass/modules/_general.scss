@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6, p, a {
     margin-top: 30px;
 }
 
+.section-heading-white {
+    color: white;
+}
+
 p {
     color: $white;
     font-family: $main-font;
@@ -29,7 +33,7 @@ p {
 }
 
 h2 {
-    font-size: 70px;
+    font-size: 55px;
     color: $red;
 }
 

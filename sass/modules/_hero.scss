@@ -254,21 +254,32 @@ header {
     margin: 5px;
 }
 
-.large-nav ul li router-link {
+.large-nav ul li {
     color: $white;
     padding: 5px;
     margin: 5px;
 }
 
 /* Hovering over a nav link */
-.large-nav ul li router-link:hover {
+.large-nav ul li:hover {
     background-color: $white;
     color: $red;
     transition-duration: 1s;
 }
 
+.large-nav ul li a:hover {
+    color: $red;
+    transition-duration: 1s;
+}
+
 /* Hovering off of a nav link */
-.large-nav ul li router-link:not(hover) {
+.large-nav ul li:not(hover) {
+    transition-duration: 1s;
+}
+
+.large-nav ul li:active {
+    background-color: $white;
+    color: $red;
     transition-duration: 1s;
 }
 

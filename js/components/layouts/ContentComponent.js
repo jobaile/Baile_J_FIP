@@ -77,39 +77,35 @@ export default {
         <!-- END WAITING STAT 3 -->
 
         <!-- TESTIMONIAL SECTION -->
-        <section class="grid-x" id="testimonial-section">
-            <div>
-                <h1></h1>
+        <section class="grid-x">
+            <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
+                <img class="hide-for-small-only" id="testimonal-header-img" src="/Baile_J_FIP/images/testimonial-header-large.png" alt="testimonal header">
+                <h2 class="section-heading-white center-text show-for-small-only">Testimonials</h2>
+                <p class="testimonial-info center-text">Want to learn more about organ doation? Click to learn how you can change someone's life forever.</p>
             </div>
-
+        </section>
+        <section class="grid-x" id="testimonial-section">
             <!-- Lightbox Starts -->
-
             <div class="container lightbox" ref="lbox">
-                
                 <!-- Exit button -->
                 <button class="close-button" @click="closebox">
                     <span>&times;</span>
                 </button>    
-                <!-- Exit button -->
-            
+                <!-- End exit button -->
                 <div class="lightbox-container">
                     <h4 class="media-title">{{ tname }}</h4>
                 </div>
-    
-                <div class="video-container grid-x">
+                <div class="lightbox-information">
+                    <p class="media-info"> {{ tinfo }} </p>
+                </div>
+                <div class="video-container">
                     <video :src="'video/testimonials/' + tsource" autoplay controls></video>
                 </div>
-    
-                <div class="lightbox-information">
-                    <p> {{ tinfo }} </p>
-                </div>
-    
             </div>
-    
             <!-- Lightbox Ends -->
 
-            <div class="cell small-12 medium-auto large-auto">
-                <img v-for="item in testimonialdata" :src="'images/testimonials/' + item.t_pic" alt="testimonial pic" @click="loadMovie(item)">
+            <div class="cell small-12 medium-12 large-12">
+                <img id="testimonial-img" v-for="item in testimonialdata" :src="'images/testimonials/' + item.t_pic" alt="testimonial pic" @click="loadMovie(item)">
             </div> 
         </section>
         <!-- END TESTIMONIAL SECTION -->
@@ -132,17 +128,24 @@ export default {
         <!-- LEARN MORE ABOUT ORGANS SECTION -->
         <section class="grid-x">
         <div id="learn-more-section">
+        <div id="learn-more-bckgnd-colour">
+            <div id="learn-more-section-header" class="center-text small-10 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 cell">
+                <h2 class="section-heading">Learn More</h2>
+                <p class="organ-info">Want to learn more about organ doation? Click on an organ to learn how you can change someone's life forever.</p>
+            </div>
             <div id="organ-icons-container" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
                 <img :src="'images/organs/' + organ.organ_icon" v-for="organ in organdata" class="organ-icons" alt="organ" @click="organdetails(organ)">     
             </div>
-            <div id="organInformation" class="center-text small-10 small-offset-0 medium-10 medium-offset-0 large-10 large-offset-0 cell">
+            <div id="organInformation" class="center-text small-10 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 cell">
                 <h2 class="organ-name bold">{{ oname }}</h2>
                 <p class="organ-info"> {{ infoOne }}</p>    
                 <p class="organ-fact"> {{infoTwo }}</p>    
             </div>
+        <div>
         </div>     
         </section>
-         <!-- END: LEARN MORE ABOUT ORGANS SECTION -->
+        <!-- END: LEARN MORE ABOUT ORGANS SECTION -->
+
 
 
         <!-- WAITING STAT 5 -->
@@ -150,11 +153,12 @@ export default {
             <div class="stat-container small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                 <video autoplay muted loop src="video/wavelength.mp4"></video>
                 <div class="center-text">
-                    <h2 class="stat-text">Up to 1.8 million Ontarians mistakenly believe they are registered organ and tissue donors. Are you one of them?</h2> 
+                    <h2 class="stat-text">Up to 1.8 million Ontarians mistakenly believe they are registered organ and tissue donors.</h2> 
                 </div>                     
             </div>
         </section>
         <!-- END WAITING STAT 5 -->
+
 
 
         <!-- WHAT ARE YOU WAITING FOR? FINAL IMG -->
