@@ -77,12 +77,14 @@ export default {
         <!-- END WAITING STAT 3 -->
 
         <!-- TESTIMONIAL SECTION -->
-        <section class="grid-x" id="testimonial-section">
-            <div>
-                <h2 class="section-heading">Testimonials</h2>
-                <p class="organ-info">Want to learn more about organ doation? Click to learn how you can change someone's life forever.</p>
+        <section class="grid-x">
+            <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
+                <img class="hide-for-small-only" id="testimonal-header-img" src="/Baile_J_FIP/images/testimonial-header-large.png" alt="testimonal header">
+                <h2 class="section-heading-white center-text show-for-small-only">Testimonials</h2>
+                <p class="testimonial-info center-text">Want to learn more about organ doation? Click to learn how you can change someone's life forever.</p>
             </div>
-
+        </section>
+        <section class="grid-x" id="testimonial-section">
             <!-- Lightbox Starts -->
             <div class="container lightbox" ref="lbox">
                 <!-- Exit button -->
@@ -94,7 +96,7 @@ export default {
                     <h4 class="media-title">{{ tname }}</h4>
                 </div>
                 <div class="lightbox-information">
-                    <p class="media-info">HELLO<BR>HELLO {{ tinfo }} </p>
+                    <p class="media-info"> {{ tinfo }} </p>
                 </div>
                 <div class="video-container">
                     <video :src="'video/testimonials/' + tsource" autoplay controls></video>

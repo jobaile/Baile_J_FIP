@@ -60,26 +60,18 @@ video {
 @media screen and (min-width: 1300px) {.about-text {width: 44%; margin-left: 10px; font-size: 40px; line-height: 48px;}}
 
 /* ----------------------------------- Testimonial Section ----------------------------------- */
-#testimonial-section {
-    /* background-image: url("../images/bckgnd-testimonials.jpeg");  The image used */
-    background-color: $white; /* Used if the image is unavailable */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-}
-
-#testimonial-section img {
+#testimonial-img {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
 
-#testimonial-section img:hover {
+#testimonial-img:hover {
     -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     filter: grayscale(0%);
     transition-duration: 1.0s;
 }
 
-#testimonial-section img:not(:hover) {
+#testimonial-img:not(:hover) {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
     transition-duration: 1.0s;
@@ -89,6 +81,16 @@ video {
     #testimonial-section img {
         width: 33.333%;
     }
+}
+
+.testimonial-info {
+    color: $white;
+    padding-top: 10px;
+}
+
+#testimonal-header-img {
+    margin-left: 10%;
+    width: 80%;
 }
 
 /* ----------------------------------- 'How can I help?' Section ----------------------------------- */
