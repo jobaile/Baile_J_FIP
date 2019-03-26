@@ -3,10 +3,6 @@ import LoginComponent from "./components/LoginComponent.js";
 import DashboardComponent from './components/DashboardComponent.js';
 import AddUserComponent from './components/dashboard/AddUserComponent.js';
 import AddTestimonialComponent from './components/dashboard/AddTestimonialComponent.js';
-// import EditUserComponent from './components/dashboard/EditUserComponent.js';
-// import EditTestimonialComponent from './components/dashboard/EditTestimonialComponent.js';
-
-
 
 const routes = [
   { path: "/", name: "home", component: HomeComponent },
@@ -15,9 +11,7 @@ const routes = [
   { path: "/dashboard", name: "dashboard", component: DashboardComponent,
     children:[
       { path: "/adduser", name: "adduser", component: AddUserComponent },
-      // { path: "/edituser", name: "edituser", component: EditUserComponent },
       { path: "/addtestimonial", name: "addtestimonial", component: AddTestimonialComponent },
-      // { path: "/edittestimonial", name: "edittestimonial", component: EditTestimonialComponent },
     ]},
 
 ];
@@ -51,3 +45,4 @@ const vm = new Vue({
 //     next();
 //   }
 // });
+// running into some errors with this on
