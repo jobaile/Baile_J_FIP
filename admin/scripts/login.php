@@ -1,7 +1,6 @@
 <?php
 
-function login($username, $password, $ip)
-{
+function login($username, $password, $ip) {
     
 
 require_once('connect.php');
@@ -48,9 +47,6 @@ require_once('connect.php');
       $user['id'] = $found_user['user_id'];
       $user['username'] = $found_user['user_name'];
       $user['admin'] = $found_user['user_admin'];
-      $user['access'] = $found_user['user_access'];
-
-      // add any other non-sensitive details here...
 
       return $user;
     }
