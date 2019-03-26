@@ -1,14 +1,5 @@
 <?php
 
-// function redirect_to($location) {
-//     // echo 'inside redirect';exit;
-//   if($location != NULL ) {
-//     // var_dump($location);
-//     header('Location: '.$location);
-//     exit();
-//   }
-// }
-
 function createUser($fname,$username,$password,$email){
   include('connect.php');
 
@@ -47,8 +38,6 @@ function get_single_organ($pdo, $organ) {
 
   while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
       $results[] = $row;
-
-      // you could run subresult queries here - just write another function and append.
   }
 
   return $results;
@@ -77,8 +66,6 @@ function get_single_testimonial($pdo, $testimonial) {
 
   while($row = $get_video->fetch(PDO::FETCH_ASSOC)) {
       $results[] = $row;
-
-      // you could run subresult queries here - just write another function and append.
   }
 
   return $results;
@@ -96,4 +83,81 @@ function get_all_testimonials($pdo) {
   }
 
   return $results;
+}
+
+function createTestimonial($name, $image_file, $video_file){
+  include('connect.php');
+  $typeimg	= $_FILES["testimonial_file"]["type"];
+  $sizeimg	= $_FILES["testimonial_file"]["size"];
+  $tempimg	= $_FILES["testimonial_file"]["tmp_name"];
+
+  $typevid	= $_FILES["testimonial_video"]["type"];
+  $sizevid	= $_FILES["testimonial_video"]["size"];
+  $tempvid	= $_FILES["testimonial_video"]["tmp_name"];
+
+  $imagepath= "../../images/testimonials/".$image_file; //where the image will be uploaded
+  $videopath= "../../videos/testimonials/".$video_file; //where the vide will be uploaded
+  
+    if(empty($name)){
+      echo "<script LANGUAGE='JavaScript'>window.alert('Please enter a name.');</script>";
+    } else if(empty($image_file)){
+      echo "<script LANGUAGE='JavaScript'>window.alert('Please select an image');</script>";
+    } else if($typeimg == "image/jpg" || $typeimg == 'image/jpeg' || $typeimg == 'image/png' || $typeimg == 'image/gif') //allowed file extensions
+    {	
+      if(!file_exists($imagepath)) //ensures that the file does not exist
+      {
+        if($sizeimg < 6000000) { //6mb file size
+          move_uploaded_file($tempimg, "../../images/testimonials/" .$image_file); //move upload file temperory directory to your upload folder
+        } else {
+          echo "<script LANGUAGE='JavaScript'>window.alert('6MB Upload Limit!');</script>";
+          // $error="6MB Upload Limit"; //error message file size not large than 6MB
+        }
+      } else {	
+        echo "<script LANGUAGE='JavaScript'>window.alert('Image Already Exists');</script>";
+        // $error="Image Already Exists"; //error message file not exists your upload folder path
+      }
+    } else {
+      echo "<script LANGUAGE='JavaScript'>window.alert('Please check file extension');</script>";
+      // $error="Please check file extension"; 
+    }
+    
+    if(empty($video_file)){
+      echo "<script LANGUAGE='JavaScript'>window.alert('Please select a video.');</script>";
+		} else if($typevid == "video/mp4" || $typevid == 'video/mpeg' || $typevid == 'video/ogg' || $typevid == 'video/webm') //allowed file extensions
+		{	
+			if(!file_exists($videopath)) //ensures that the file does not exist
+			{
+				if($sizevid < 10000000) { //10mb file size
+					move_uploaded_file($tempvid, "../../video/testimonials/" .$video_file); 
+				} else {
+          echo "<script LANGUAGE='JavaScript'>window.alert('15mb upload limit');</script>";
+					// $error="15MB Upload Limit"; 
+				}
+			} else {	
+        echo "<script LANGUAGE='JavaScript'>window.alert('Video Already Exists');</script>";
+			}
+		} else {
+      echo "<script LANGUAGE='JavaScript'>window.alert('Please check file extension');</script>";
+    } 
+    
+    if(!isset($error)) {
+			$insert_testimonial='INSERT INTO tbl_testimonial(t_name, t_pic, t_vid) VALUES(:tname,:timage, :tvideo)'; //sql insert query					
+			$insert_testimonial_set = $pdo->prepare($insert_testimonial);
+			$insert_testimonial_set->execute(
+				array(
+					':tname'=>$name,
+					':timage'=>$image_file,
+					':tvideo'=>$video_file,
+				)
+			);
+
+			if($insert_testimonial_set->rowCount()){
+				echo "<script LANGUAGE='JavaScript'>
+				window.alert('Testimonial Added!');
+				window.location.href='../../index.html#/addtestimonial';
+				</script>";
+			  } else {
+				  redirect_to('Location: index.html');
+			  }
+		}
 }

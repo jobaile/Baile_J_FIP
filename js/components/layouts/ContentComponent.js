@@ -149,7 +149,7 @@ export default {
                 <div class="small-12 small-offset-0 medium-12 small-offset-0 large-12 small-offset-0 cell">
                     <img class="hide-for-small-only" id="testimonal-header-img" src="images/testimonial-header-large.png" alt="testimonal header">
                     <h2 class="section-heading-white center-text show-for-small-only">Testimonials</h2>
-                    <p class="testimonial-info center-text">Want to learn more about organ doation? Click to learn how you can change someone's life forever.</p>
+                    <p class="testimonial-info center-text">Want to learn more about organ donation? Click to learn how you can change someone's life forever.</p>
                 </div>
             </section>
 

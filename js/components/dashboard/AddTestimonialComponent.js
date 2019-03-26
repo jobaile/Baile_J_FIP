@@ -3,21 +3,28 @@ export default {
     <section>
     <div class="grid-x">
         <div class="small-12 large-6 large-offset-3 cell">
-        <form action="./admin/scripts/add_testimonial.php" method="post" enctype="multipart/form-data">
+        <form action="./admin/scripts/add_testimonial.php" method="post" enctype="multipart/form-data" @submit="checkForm">
+            
+            <p v-if="errors.length">
+                <b>Please correct the following error(s):</b>
+                <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                </ul>
+            </p>
 					
         <div>
         <label>Name</label>
-        <input type="text" name="testimonial_name" placeholder="enter name">
+         <input type="text" name="testimonial_name" v-model="name" placeholder="enter name">
         </div>
             
         <div>
         <label>Upload Image:</label>
-            <input type="file" name="testimonial_file" class="btn">
+            <input type="file" name="testimonial_file" v-model="image" class="btn">
         </div>
 
         <div>
         <label>Upload Video:</label>
-            <input type="file" name="testimonial_video" class="btn">
+            <input type="file" name="testimonial_video" v-model="video" class="btn">
         </div>
 
         <div>
@@ -26,11 +33,43 @@ export default {
         <a href="#/addtestimonial" @click="reload">Start Over</a>        
         </div>
             
-    </form>
+        </form>
         </div>
     </div>
     </section>
     `,
+
+    created: function() {
+        //debugger;
+      },
+  
+      data() {
+        return {
+              errors:[],
+                name: null,
+                image: null,
+                video: null,
+          }
+      },
+      
+      checkForm: function(e){
+        if (this.name && this.image && this.video) {
+            return true;
+        }
+
+        this.errors = [];
+        if (!this.name) {
+            this.errors.push('Name required.');
+          }
+        // if (!this.image) {
+        //     this.errors.push('Please select an image.');
+        // }
+        // if (!this.video) {
+        //     this.errors.push('Please select a video.');
+        // }
+
+        e.preventDefault();
+    },
 
     methods: {
         reload(){
