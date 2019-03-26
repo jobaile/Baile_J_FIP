@@ -6,7 +6,6 @@ import FooterComponent from './layouts/FooterComponent.js'; //footer
 export default {
 	template: `
 	<section>
-		<MainNavComponent/>
 		<ContentComponent/>
 		<FooterComponent/>
 	</section>

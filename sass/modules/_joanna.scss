@@ -1,25 +1,32 @@
-/* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
-
-/* Simple Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-
 /* Form Layout */
 .form-wrapper {
   background: #fafafa;
   margin: 3em auto;
   padding: 0 1em;
   max-width: 370px;
+
+  h1 {
+    text-align: center;
+    padding: 1em 0;
+    color: $red;
+  }
+
 }
 
-h1 {
+.dashboard-title {
   text-align: center;
-  padding: 1em 0;
+  color: $black;
 }
 
 form {
   padding: 0 1.5em;
+  a {
+    color: $white;
+  }
+
+  a:hover {
+    color: $black;
+  }
 }
 
 .form-item {

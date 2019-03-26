@@ -33,7 +33,7 @@ export default {
                         <li class="footer-links"><a href="#">Home</a></li>
                         <li class="footer-links"><a href="#">About</a></li>
                         <li class="footer-links"><a href="#">Act Now</a></li>
-                        <li class="footer-links"><a href="#">Next Steps</a></li>
+                        <li class="footer-links"><a href="#">Testimonials</a></li>
                         <li class="footer-links"><a href="#">Learn More</a></li>
                         <li class="footer-links"><a href="#/login">Admin</a></li>	
                     </ul>

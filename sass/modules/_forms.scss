@@ -1,0 +1,51 @@
+
+.btn {
+    font-family: $main-font;
+    background-color: $white;
+    padding: 7px;
+    color: $red;
+    border: none;
+  }
+  
+  .btn:hover {
+    background-color: $black;
+    color: $white;
+    transition-duration: 1.0s;
+  }
+  
+  .btn:not(:hover) {
+    font-family: $main-font;
+    background-color: $white;
+    color: $red;
+    transition-duration: 1.0s;
+  }
+  
+  .btn-startover {
+    font-family: $main-font;
+    background-color: $white;
+    padding: 5px 6px 6px 6px;
+    color: $red;
+    border: none;
+  }
+  
+  .btn-startover:hover {
+    background-color: $black;
+    color: $white;
+    transition-duration: 1.0s;
+  }
+  
+  .btn-startover:not(:hover) {
+    background-color: $white;
+    transition-duration: 1.0s;
+    color: $red;
+  }
+  
+  .form-field {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .input {
+    margin: 0px;
+    padding: 0px;
+  }

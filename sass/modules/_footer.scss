@@ -54,8 +54,7 @@ footer
 }
 
 /* Hovering over a nav link */
-.footer-links ul li a:hover {
-    background-color: $white;
+.footer-links a:hover {
     color: $red;
     transition-duration: 1s;
 }

@@ -47,24 +47,25 @@ export default {
     <!-- END: NAV -->
 
         <!-- LOGO & (medium up) NAV -->
-		<header class="grid-x grid-padding-x">
-			<div class="small-8 small-offset-0 medium-2 medium-offset-0 large-2 large-offset-0 cell">
-				<a href="#/">
-					<img src="images/logo-main-white.svg" alt="What Are You Waiting For? Main Logo" class="main-logo">
-				</a>
+        <header class="grid-x grid-padding-x">
+            <div class="small-8 small-offset-0 medium-2 medium-offset-0 large-2 large-offset-0 cell">
+                <a href="#/">
+                    <img src="images/logo-main-white.svg" alt="What Are You Waiting For? Main Logo" class="main-logo">
+                </a>
             </div>
             <nav class="hide-for-small-only medium-10 medium-offset-0 large-10 large-offset-0 cell large-nav">
                 <!-- Nav Links -->
                 <ul class="float-right">
                     <li class="nav-links-large"><a href="#">Home</a></li>
-                    <li class="nav-links-large"><a href="#">About</a></li>
-                    <li class="nav-links-large"><a href="#">Act Now</a></li>
-                    <li class="nav-links-large"><a href="#">Next Steps</a></li>
-                    <li class="nav-links-large"><a href="#">Learn More</a></li>	
+                    <li class="nav-links-large"><a @click="goto('about')">About</a></li>
+                    <li class="nav-links-large"><a @click="goto('act-now')">Act Now</a></li>
+                    <li class="nav-links-large"><a @click="goto('next-step')">Next Steps</a></li>
+                    <li class="nav-links-large"><a @click="goto('learn-more')">Learn More</a></li>	
                     <li class="nav-links-large"><a href="https://www.ontario.ca/page/organ-and-tissue-donor-registration?utm_source=so&utm_medium=keyword&utm_campaign=original" target="_blank">Register</a></li>	
                 </ul>
             </nav>
         </header>
+        
     </div>
     `,
     
@@ -73,6 +74,15 @@ export default {
             $('[data-curtain-menu-button]').click(function(){
                 $('body').toggleClass('curtain-menu-open');
             })
-            }
+        },
+
+        goto(refName) {
+            //console.log(element);
+
+            var element = this.$refs[refName];
+            var top = element.offsetTop;
+          
+          window.scrollTo(0, top);
+        }
     }
 }

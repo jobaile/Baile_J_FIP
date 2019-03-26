@@ -5,6 +5,7 @@ export default {
 	template: `
 	<section>
 		<NavDBComponent />
+		<h3 class="dashboard-title">Admin Dashboard</h3>
 		<router-view @authenticated="setAuthenticated"/>
 	</section>
 	`,
