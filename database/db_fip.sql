@@ -1,50 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 23, 2019 at 01:23 AM
--- Server version: 5.7.23
--- PHP Version: 7.2.8
+-- Generation Time: Mar 24, 2019 at 01:19 PM
+-- Server version: 5.6.38
+-- PHP Version: 7.1.12
+-- Joanna Baile, Fernando D'Oria, Logan Litman, Carter Rose
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Database: `db_fip`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_file`
---
-
-CREATE TABLE `tbl_file` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `image` varchar(250) NOT NULL,
-  `video` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_file`
---
-
-INSERT INTO `tbl_file` (`id`, `name`, `image`, `video`) VALUES
-(1, 'Edit1', '27797843_2055898667955346_6605420275109509640_o.jpg', ''),
-(2, 'Trial', '40694623_2160988113934012_5373070831087779840_n.jpg', ''),
-(3, 'test', 'adventure-conifer-daylight-302271.jpg', ''),
-(4, 'one more!', 'abstract-art-artistic-1103970.jpg', ''),
-(5, 'testing', '47158214_796426577372683_2483952103228178432_n.jpg', ''),
-(6, 'testing', '40694623_2160988113934012_5373070831087779840_n.jpg', ''),
-(7, 'hello', '40694623_2160988113934012_5373070831087779840_n.jpg', ''),
-(8, 'pictre', '46488561_2262790200420469_8384253586061656064_o.jpg', ''),
-(9, 'Another-Test', 'fims-favi.png', ''),
-(10, 'Testing-working', 'new-logo.png', ''),
-(11, 'One Last Check', 'testingforthis.jpg', ''),
-(12, 'video-test', 'Screen Shot 2018-11-25 at 11.10.10 PM.png', 'testingforthis.jpg'),
-(16, 'vid-test-5', 'organlogo_main.png', '06-InfuserProtype 3DAnimation.mp4');
 
 -- --------------------------------------------------------
 
@@ -117,21 +92,11 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`) VALUES
 (1, 'admin', 'admin', '123', 'admin@waywf.ca', '2019-02-28 16:18:14'),
-(3, 'Joanna', 'Testing', '123', 'joannabaile@gmail.com', '2019-03-02 04:59:32'),
-(4, 'Test', 'Two', '123', 'two@hello.ca', '2019-03-02 05:01:14'),
-(5, 'Tester', 'Creation', 'qwe12345', 'jo@baile.com', '2019-03-02 14:20:41'),
-(6, 'hello', 'test', '123', 'test@user.ca', '2019-03-02 14:21:40'),
-(7, 'Joanna', 'fromVue', '123', 'vue@test.ca', '2019-03-19 14:29:11');
+(3, 'Joanna', 'Testing', '123', 'joannabaile@gmail.com', '2019-03-02 04:59:32');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `tbl_file`
---
-ALTER TABLE `tbl_file`
-  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `tbl_organs`
@@ -156,12 +121,6 @@ ALTER TABLE `tbl_user`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_file`
---
-ALTER TABLE `tbl_file`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
 -- AUTO_INCREMENT for table `tbl_organs`
 --
 ALTER TABLE `tbl_organs`
@@ -171,10 +130,14 @@ ALTER TABLE `tbl_organs`
 -- AUTO_INCREMENT for table `tbl_testimonial`
 --
 ALTER TABLE `tbl_testimonial`
-  MODIFY `t_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `t_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -14,7 +14,7 @@ The importance of organ donation can not be stated enough as the list of people 
 `$ npm install`
 
 3. Run gulp:
-`$ npm run dev`
+`$ gulp`
 
 4. Add project folder to your local server (MAMP for MacOS users, XAMPP or WAMP for Windows or Linux)
 
