@@ -1,13 +1,13 @@
 <?php
 
-function redirect_to($location) {
-    // echo 'inside redirect';exit;
-  if($location != NULL ) {
-    // var_dump($location);
-    header('Location: '.$location);
-    exit();
-  }
-}
+// function redirect_to($location) {
+//     // echo 'inside redirect';exit;
+//   if($location != NULL ) {
+//     // var_dump($location);
+//     header('Location: '.$location);
+//     exit();
+//   }
+// }
 
 function createUser($fname,$username,$password,$email){
   include('connect.php');
@@ -26,11 +26,15 @@ function createUser($fname,$username,$password,$email){
   );
 
   if($create_user_set->rowCount()){
-	redirect_to('../../index.html#/dashboard');
-	//change this just so a message pops up > users don't need to sign in again
+    echo "<script LANGUAGE='JavaScript'>
+    window.alert('Succesfully Updated');
+    window.location.href='../../index.html#/adduser';
+    </script>";
   }else{
-    $message = 'Your hiring practices have failed you.. this individual sucks...';
-    return $message;
+    // echo "<script LANGUAGE='JavaScript'>
+    // window.alert('You are missing some required fields!);
+    // window.location.href='../../index.html#/adduser';
+    // </script>";  
   }
 }
 

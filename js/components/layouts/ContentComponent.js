@@ -168,7 +168,7 @@ export default {
                         <p class="media-info"> {{ tinfo }} </p>
                     </div>
                     <div class="video-container">
-                        <video :src="'video/testimonials/' + tsource" autoplay controls></video>
+                        <video :src="'video/testimonials/' + tsource" controls></video>
                     </div>
                 </div>
                 <!-- Lightbox Ends -->
@@ -206,9 +206,11 @@ export default {
                             <img :src="'images/organs/' + organ.organ_icon" v-for="organ in organdata" class="organ-icons" alt="organ" @click="organdetails(organ)">     
                         </div>
                         <div id="organInformation" class="center-text small-10 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 cell">
-                            <h2 class="organ-name bold">{{ oname }}</h2>
-                            <p class="organ-info"> {{ infoOne }}</p>    
-                            <p class="organ-fact"> {{infoTwo }}</p>    
+                            <div id="opacity" ref="details">
+                                <h2 class="organ-name bold">{{ oname }}</h2>
+                                <p class="organ-info"> {{ infoOne }}</p>    
+                                <p class="organ-fact"> {{infoTwo }}</p>   
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -298,6 +300,8 @@ export default {
                 this.oname = organ_name;
                 this.infoOne = organ_infoOne;
                 this.infoTwo = organ_infoTwo;
+
+                this.$refs.details.style.opacity = "1";
             },
 
             fetchTestimonialData(testimonial) {

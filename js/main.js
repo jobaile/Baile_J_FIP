@@ -3,8 +3,8 @@ import LoginComponent from "./components/LoginComponent.js";
 import DashboardComponent from './components/DashboardComponent.js';
 import AddUserComponent from './components/dashboard/AddUserComponent.js';
 import AddTestimonialComponent from './components/dashboard/AddTestimonialComponent.js';
-import EditUserComponent from './components/dashboard/EditUserComponent.js';
-import EditTestimonialComponent from './components/dashboard/EditTestimonialComponent.js';
+// import EditUserComponent from './components/dashboard/EditUserComponent.js';
+// import EditTestimonialComponent from './components/dashboard/EditTestimonialComponent.js';
 
 
 

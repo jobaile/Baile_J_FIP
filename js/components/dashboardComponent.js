@@ -12,7 +12,6 @@ export default {
 
 	created: function() {
 	  //debugger;
-	  this.fetchAllUsers();
 	},
 
 	data() {
@@ -27,17 +26,6 @@ export default {
 		setAuthenticated(status, data) {
 			this.authenticated = status;
 			this.user = data;
-		},
-		
-	  fetchAllUsers() {
-		let url = `./admin/scripts/users.php?allusers=true`;
-
-		fetch(url)
-		  .then(res => res.json())
-		  .then(data => {this.userList = data})
-		.catch(function(error) {
-		  console.error(error);
-		});
 		},
 		
 		logout() {

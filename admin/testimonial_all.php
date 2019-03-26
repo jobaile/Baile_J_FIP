@@ -6,7 +6,7 @@
 	// {
 	// 	$id = $_REQUEST['delete'];
 		
-    //     $testimonialQuery= $db->prepare('SELECT * FROM tbl_file WHERE id =:id');
+    //     $testimonialQuery= $db->prepare('SELECT * FROM tbl_testimonial WHERE id =:id');
     //     $get_test_set->execute(
 	// 		array(
 	// 			':id'=>$id

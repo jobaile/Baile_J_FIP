@@ -50,10 +50,10 @@ if(isset($_REQUEST['btn_add']))
 		{	
 			if(!file_exists($videopath)) //ensures that the file does not exist
 			{
-				if($sizevid < 1000000) { //50mb file size
+				if($sizevid < 15000000) { //15mb file size
 					move_uploaded_file($tempvid, "../../video/testimonials/" .$video_file); 
 				} else {
-					$error="50MB Upload Limit"; 
+					$error="15MB Upload Limit"; 
 				}
 			} else {	
 				$error="Video Already Exists"; 
@@ -75,9 +75,12 @@ if(isset($_REQUEST['btn_add']))
 			);
 
 			if($insert_testimonial_set->rowCount()){
-				redirect_to('../../index.html#/dashboard');
+				echo "<script LANGUAGE='JavaScript'>
+				window.alert('Testimonial Added!');
+				window.location.href='../../index.html#/addtestimonial';
+				</script>";
 			  }else{
-				redirect_to('../../index.html#/addtestimonial');
+				redirect_to('../../index.html#/adddashboard');
 			}
 		}
 	}

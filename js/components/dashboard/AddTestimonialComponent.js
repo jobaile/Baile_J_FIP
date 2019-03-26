@@ -1,7 +1,6 @@
 export default {
     template: `
     <section>
-    <h4 class="dashboard-title">Add A User</h4>
     <div class="grid-x">
         <div class="small-12 large-6 large-offset-3 cell">
         <form action="./admin/scripts/add_testimonial.php" method="post" enctype="multipart/form-data">

@@ -4,7 +4,13 @@ export default {
 		<h4 class="dashboard-title">Add A User</h4>
 				<div class="grid-x">
 					<div class="small-12 large-6 large-offset-3 cell">
-            <form action="./admin/scripts/admin_createuser.php" method="post">
+						<form action="./admin/scripts/admin_createuser.php" method="post" >
+						<p v-if="errors.length">
+							<b>Please correct the following error(s):</b>
+							<ul>
+								<li v-for="error in errors">{{ error }}</li>
+							</ul>
+						</p>
             <label for="first-name">First Name</label>
             <input type="text" id="first-name" name="fname" value="" placeholder="First Name"><br><br>
 
@@ -28,32 +34,33 @@ export default {
 
 	created: function() {
 	  //debugger;
-	  this.fetchAllUsers();
 	},
 
 	data() {
 	  return {
-    	userList: []
-	  }
+			errors:[],
+			username: null,
+			email: "",
+			password: null,
+		}
 	},
 
 	methods: {
-	  fetchAllUsers() {
-		let url = `./admin/scripts/users.php?allusers=true`;
+		// checkForm: function(e){
+		// 	if(this.username && this.password) 
+		// 		return true;
 
-		fetch(url)
-		  .then(res => res.json())
-		  .then(data => {this.userList = data})
-		.catch(function(error) {
-		  console.error(error);
-		});
-	  }
-    },
-  
-		
-		methods: {
-			reload(){
-				window.location.reload()
-			}
+		// 	this.errors = [];
+		// 	// if(!this.fname) this.errors.push("First Name required!");
+		// 	if(!this.username) this.errors.push("Username required!");
+		// 	// if(!this.email) this.errors.push("Email required!");
+		// 	if(!this.password) this.errors.push("Password required!");
+
+		// 	e.preventDefault();
+		// },
+
+		reload(){
+			window.location.reload()
 		}
+	}
 }
