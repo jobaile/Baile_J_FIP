@@ -35,10 +35,6 @@ export default {
      },
 
      created: function() {
-        // do a session check and set authenticated to true if the session still exists
-        // if the cached user exists, then just navigate to their user home page
-        // the localstorage session will persist until logout
-    
         if (localStorage.getItem("cachedUser")) {
           let user = JSON.parse(localStorage.getItem("cachedUser"));
           this.authenticated = true;
