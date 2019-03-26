@@ -12,4 +12,4 @@ gulp.task('sass', function(){
 
 gulp.task('default', gulp.series('sass'), function(){
     gulp.watch('.sass/**/*.scss'), gulp.series('sass');
-})
+});
