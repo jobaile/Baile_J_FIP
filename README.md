@@ -1,6 +1,8 @@
 # What Are You Waiting For?
+![logo](https://github.com/jobaile/Baile_J_FIP/blob/master/images/WAYWF_main.png?raw=true)
+
 #### The Campaign:
-Organ Donation information will go here
+The importance of organ donation can not be stated enough as the list of people waiting to recieve an organ is ever growing. Normalizing the conversation about organ donation and increasing organ donation registration is the ultimate goal. With these considerations in mind, the What Are You Waiting For? brand was developed.
 
 ## Installation
 **Install [npm](https://www.npmjs.com/get-npm) if not already done so**
@@ -8,11 +10,11 @@ Organ Donation information will go here
 1. Command line:
 `$ git clone https://github.com/jobaile/Baile_J_FIP`
 
-2. Install dependencies
+2. Install dependencies:
 `$ npm install`
 
-3. Compile style files
-`gulp`
+3. Run gulp:
+`$ npm run dev`
 
 4. Add project folder to your local server (MAMP for MacOS users, XAMPP or WAMP for Windows or Linux)
 
@@ -21,10 +23,11 @@ Organ Donation information will go here
 6. Run page through your localhost.
 
 # Features
-A working CMS system! You can upload your own testimonials.
+A working CMS system! You can upload your own testimonials that will update realtime.
+
 * Supported Images -  jpg, jpeg, png, gif
 * Supported Videos - mp4, webm, ogg, mpeg
-This will update real time on the website!
+
 
 # Members
 Since we are a team of 4, we have divided up the Project Manager role.
@@ -32,6 +35,9 @@ Since we are a team of 4, we have divided up the Project Manager role.
 * [Logan Litman](http://loganlitman.com/) - *Graphic Designer*
 * [Carter Rose](http://carterrose.ca/) - *Front-End Developer*
 * [Joanna Baile](http://joannabaile.com/) - *Back-End Developer*
+
+#### Special shoutouts
+Special shoutouts to our professor at Fanshawe College for everything you have taught us! This is our last big final project of our undergrad career. Hope we did you all proud.
 
 
 ## License
