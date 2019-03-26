@@ -1,0 +1,49 @@
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+    overflow-y: scroll;
+}
+
+.close-button {
+    width: 50px;
+    height: 50px;
+    transform: scale(1.8);
+    color: $red;
+    margin-top: 28px;
+}
+
+.close-button :hover {
+    color: $white;
+    transition-duration: 0.8s;
+}
+
+.close-button :not(:hover) {
+    color: $red;
+    transition-duration: 0.8s;
+}
+
+.video-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.media-title {
+    margin: 20px 0px 10px 20px;
+    font-size: 50px;
+}
+
+.media-info {
+    margin-left: 20px;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 30px;
+    color: $white;
+}

@@ -1,0 +1,12 @@
+#This will ignore files
+#Folders
+node_modules
+.sass-cache
+
+#Files
+.DS_Store
+
+#Extensions
+.xd
+.pdf
+.psd

@@ -1,0 +1,29 @@
+{
+  "name": "baile_j_fip",
+  "version": "1.0.0",
+  "description": "Organ Donation - Final Integrated Project",
+  "main": "main.js",
+  "scripts": {
+    "dev": "gulp watch & gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobaile/Baile_J_FIP.git"
+  },
+  "keywords": [
+    "fip",
+    "organ",
+    "donation",
+    "team"
+  ],
+  "author": "Joanna Baile, Fernando D'Oria, Carter Rose, Logan Litman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jobaile/Baile_J_FIP/issues"
+  },
+  "homepage": "https://github.com/jobaile/Baile_J_FIP#readme",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

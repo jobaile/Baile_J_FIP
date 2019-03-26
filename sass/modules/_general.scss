@@ -1,0 +1,42 @@
+body {
+    background-color: $red;
+    color: $white;
+    font-family: $main-font;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: $main-font;
+}
+
+.hidden {
+    display: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.section-heading {
+    color: $red;
+    margin-top: 30px;
+}
+
+.section-heading-white {
+    color: white;
+}
+
+p {
+    color: $white;
+    font-family: $main-font;
+    font-size: 25px;
+    line-height: 32px;
+}
+
+h2 {
+    font-size: 55px;
+    color: $red;
+}
+
+.bold {
+    font-weight: 550;
+}
